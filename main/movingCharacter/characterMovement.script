@@ -4,7 +4,8 @@ local function InitMoveCharacter(self)
 end
 
 local function move2(self)
-	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
+	--msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_all_nodes"))
 end
 
 local function randomMoceCharacter(self, node)
@@ -34,9 +35,14 @@ function on_message(self, message_id, message, sender)
 		local delay = 0
 		local path = message.path
 		for i=1, #path do
+			print("Going to: " .. tostring( vmath.vector3(path[i].x, path[i].y, 1) ))
 			go.animate(go.get_id(), "position", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(path[i].x, path[i].y, 1), go.EASING_LINEAR, 1, delay)
 			delay = delay + 1
 		end
-		timer.delay(3, false, move2)
+		timer.delay(delay, false, move2)
+	elseif message_id == hash("all_nodes") then
+		local nodes = message.nodes
+		local randomNode = nodes[ math.random(1, #nodes) ]
+		randomMoceCharacter(self, randomNode)
 	end
 end

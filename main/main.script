@@ -3,8 +3,8 @@
 -----------------
 
 local function redraw(self)
-	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("redraw_path"))
-	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("debug"))
+	--msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("redraw_path"))
+	--msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("debug"))
 end
 
 function init(self)

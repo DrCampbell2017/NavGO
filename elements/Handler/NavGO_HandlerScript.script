@@ -204,6 +204,13 @@ function on_message(self, message_id, message, sender)
 		elseif self.deleteAfterGotten then
 			msg.post(sender, hash("disable"))
 		end
+	elseif message_id == hash("return_all_nodes") then
+		local nodes = {}
+		for i=1, #self.nodes do
+			local url = self.nodes[i]:getObjID()
+			table.insert(nodes, url)
+		end
+		msg.post(sender, hash("all_nodes"), { nodes = nodes } )
 	elseif message_id == hash("return_random_node") then
 		local randomNode = self.nodes[math.random(1, #self.nodes)]
 		local randomURL = randomNode:getObjID()
