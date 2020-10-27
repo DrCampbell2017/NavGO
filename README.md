@@ -49,6 +49,12 @@ msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target 
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
 ```
 
+### Return All Nodes
+  Message will send a list back of all node URL's in the tree. Will be sent with message_id hash("all_nodes") and message.nodes
+ ```
+ msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_all_nodes"))
+ ```
+
 ### debug
   This message will force on debug node to show all nodes on the map as well as the connections between them.
 ```
