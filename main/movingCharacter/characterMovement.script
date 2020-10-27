@@ -1,10 +1,15 @@
 local function InitMoveCharacter(self)
 	--Go to node go.get_id("/NavGO_NodeGO1")
-	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO1")})
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/collection1-2/NavGO_NodeGO2")})
 end
 
 local function move2(self)
-	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO5")})
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
+end
+
+local function randomMoceCharacter(self, node)
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = node})
+	
 end
 
 ------------------
@@ -21,6 +26,10 @@ function on_message(self, message_id, message, sender)
 			local newpos = go.get_position() + message.normal * message.distance
 			go.set_position(newpos)
 		end
+	elseif message_id == hash("random_node") then
+		local randomNode = message.node
+		randomMoceCharacter(self, randomNode)
+		
 	elseif message_id == hash("path_to_follow") then
 		local delay = 0
 		local path = message.path

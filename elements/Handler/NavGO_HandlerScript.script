@@ -204,6 +204,10 @@ function on_message(self, message_id, message, sender)
 		elseif self.deleteAfterGotten then
 			msg.post(sender, hash("disable"))
 		end
+	elseif message_id == hash("return_random_node") then
+		local randomNode = self.nodes[math.random(1, #self.nodes)]
+		local randomURL = randomNode:getObjID()
+		msg.post(sender, hash("random_node"), { node = randomURL } )
 
 	elseif message_id == hash("generate_path") then
 		--Check if to point exists on path

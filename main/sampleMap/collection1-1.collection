@@ -1,0 +1,62 @@
+name: "default"
+instances {
+  id: "NavGO_NodeGO"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 103.0
+    y: 101.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO1"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 468.0
+    y: 101.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO2"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 467.0
+    y: 415.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+scale_along_z: 0
