@@ -1,0 +1,304 @@
+require("NavGO.Node.nodeModule")
+
+local function distance(vec1, vec2)
+	return math.ceil( math.sqrt( math.pow(vec1.x - vec2.x, 2) + math.pow(vec1.y - vec2.y, 2) ) )
+end
+
+local function createNodeTree(self)
+	--Show distance between all nodes
+	for i=1, #self.nodes do
+		local from = self.nodes[i]:getPosition()
+		local foundConnection = false
+		for k=i + 1, #self.nodes do
+			if not self.nodes[i]:inLinkedNodesList(self.nodes[k]) then
+				local to = self.nodes[k]:getPosition()
+				local distance = distance(from, to)
+				if distance <= self.valueRange then
+					--Do Raycast to see if hits anything
+					local result
+					if from ~= to then
+						result = physics.raycast(from, to, self.collisions, false)
+					end
+					if result == nil then
+						--Does not hit! Is good to add
+						self.nodes[i]:addToLinkedNodesList(self.nodes[k], distance)
+						self.nodes[k]:addToLinkedNodesList(self.nodes[i], distance)
+						foundConnection = true
+					end
+				end
+			end
+		end
+		if not foundConnection then
+			if not self.nodes[i]:hasConnectedNodes() then
+				print("WARNING: NODE " .. tostring(self.nodes[i]:getObjID()) .. " does not have any connections within range." )
+			end
+		end
+	end
+	self.nodePathsFound = true
+end
+
+----------
+--A Star--
+----------
+
+local function findNodeWithID(self, find)
+	local findPos = go.get_position(find)
+	for i=1, #self.nodes do
+		if self.nodes[i]:getPosition() == findPos then
+			return self.nodes[i]
+		end
+	end
+	--If not found
+	error("To Point must be on the path.")
+end
+
+local function createTempNode(self, fromGO)
+	local from = go.get_position(fromGO)
+	local newNode = navNode.New(fromGO, from)
+	for i=1, #self.nodes do
+		local to = self.nodes[i]:getPosition()
+		local distance = distance(from, to)
+		local result
+		if distance ~= 0 then
+			result = physics.raycast(from, to, self.collisions, false)
+		end
+		if result == nil then
+			newNode:addToLinkedNodesList(self.nodes[i], distance)
+			foundConnection = true
+		end
+	end
+	if not foundConnection then
+		error("No paths exists, you need to add nodes to support this.")
+	end
+	return newNode
+end
+
+local function convertPathToCordinates(self, path)
+	local finalPath = {}
+	for i=1, #path do
+		local position = path[i]:getPosition()
+		table.insert(finalPath, position)
+	end
+	return finalPath
+end
+
+local function retracePath(self, path, startNode, endNode)
+	local finalList = {}
+	local currentNode = endNode
+	while currentNode ~= startNode do
+		table.insert(finalList, 1, currentNode)
+		currentNode = path[currentNode]
+	end
+	return finalList
+end
+
+local function calculateCost(self, current, from, to)
+	local fromStart = distance(from, current)
+	local toEnd = distance(current, to)
+	local result = fromStart + toEnd
+	return result
+end
+
+local function findLowestFCostInTable(self, f_costs, nodes, from, to)
+	local lowestPos = 0
+	local lowestCost = 1000000
+	for node, value in pairs(nodes) do
+		if f_costs[ node ] == nil then
+			f_costs[ node ] = calculateCost(self, node:getPosition(), from, to)
+		end
+		local cost = f_costs[ node ]
+		if cost < lowestCost then
+			lowestCost = cost
+			lowestPos = node
+		end
+	end
+	return lowestPos, lowestCost
+end
+
+local function A_Star(self, fromGO, toGO)
+	local endNode = findNodeWithID(self, toGO)
+	local startNode = createTempNode(self, fromGO)
+	--table.insert(self.nodes, startNode)
+	local from = startNode:getPosition()
+	local to = endNode:getPosition()
+
+	local f_costs = {}
+	local openNodes = {} --To be evaluated
+	openNodes[startNode] = startNode
+	local closedNodes = {} --Already checked
+	local parent = {}
+
+	local found = false
+	while not found do
+		local currentNode, currentCost = findLowestFCostInTable(self, f_costs, openNodes, from, to)
+		openNodes[currentNode] = nil
+		
+		closedNodes[currentNode] = currentNode
+		if currentNode == endNode then
+			found = true
+			local path = retracePath(self, parent, startNode, endNode)
+			local positionList = convertPathToCordinates(self, path)
+			return positionList
+		end
+
+		local neighborsList = currentNode:getLinkedNodeList()
+		for neighbor, value in pairs(neighborsList) do
+			if closedNodes[neighbor] then
+				--Intentially left blank
+			else
+				--If new path is shorter or is not in open
+				if openNodes[neighbor] == nil or f_costs[neighbor] < currentCost then
+					f_costs[neighbor] = calculateCost(self, neighbor:getPosition(), from, to)
+					parent[neighbor] = currentNode
+					if openNodes[neighbor] == nil then
+						openNodes[neighbor] = neighbor
+					end
+				end
+			end
+		end
+	end
+end
+
+------------------
+--Core Functions--
+------------------
+
+function init(self)
+	self.nodesGotten = false
+	self.nodes = {}
+	self.nodePathsFound = false
+
+	--User Set Values
+	self.valueRange = 500
+	self.collisions = {}
+
+	--Debug
+	self.debug = false
+	self.deleteAfterGotten = false
+end
+
+function update(self, dt)
+	if self.nodePathsFound and self.debug then
+		for i=1, #self.nodes do
+			local innerList = self.nodes[i]:getLinkedNodeList()
+			local from = self.nodes[i]:getPosition()
+			for k, v in pairs(innerList) do
+				local to = k:getPosition()
+				msg.post("@render:", "draw_line", { start_point = from, end_point = to, color = vmath.vector4(1,0,0,1) })
+			end
+		end
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("new_node") then
+		if not self.nodesGotten then
+			self.nodesGotten = true
+			timer.delay(.05, false, createNodeTree)
+		end
+		local pos = go.get_position(sender)
+		local newNode = navNode.New(sender, pos)
+		table.insert(self.nodes, newNode)
+		if self.debug then
+			msg.post(sender, hash("debug"))
+		elseif self.deleteAfterGotten then
+			msg.post(sender, hash("disable"))
+		end
+
+	elseif message_id == hash("generate_path") then
+		--Check if to point exists on path
+		local exists = findNodeWithID(self, message.target)
+		assert(exists, "ERROR: Target node must exist on the path.")
+		--Do Path
+		local fromGO = sender
+		local to = message.target
+		local path = A_Star(self, fromGO, to)
+		local action = {}
+		action.path = path
+		msg.post(sender, hash("path_to_follow"), action)
+
+	elseif message_id == hash("debug") then
+		self.debug = true
+		for i=1, #self.nodes do
+			local id = self.nodes[i]:getObjID()
+			msg.post(id, hash("debug"))
+		end
+
+	elseif message_id == hash("init") then
+		assert(message.collisions, "Collisions must be provided to use the init statement.")
+		self.collisions = message.collisions
+		
+		if message.nodeNeighborRange then
+			assert(message.nodeNeighborRange > 0, "Node Neighnor Range must be greater then zero.")
+			self.valueRange = message.nodeNeighborRange
+		else
+			self.valueRange = 500
+		end
+		---------
+		--Debug--
+		---------
+		if message.debug then
+			self.debug = true
+			for i=1, #self.nodes do
+				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("debug"))
+			end
+		else
+			self.debug = false
+			for i=1, #self.nodes do
+				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("hide"))
+			end
+		end
+		-----------------------
+		--Delete after gotten--
+		-----------------------
+		if message.deleteNodeAfterGotten then
+			self.deleteAfterGotten = message.deleteNodeAfterGotten
+			for i=1, #self.nodes do
+				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("hide"))
+				msg.post(id, hash("disable"))
+			end
+		else
+			self.deleteAfterGotten = false
+			for i=1, #self.nodes do
+				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("enable"))
+			end
+		end
+			
+	elseif message_id == hash("redraw_path") then
+		if self.deleteAfterGotten then
+			for i=1, #self.nodes do
+				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("enable"))
+			end
+		end
+		for i=1, #self.nodes do
+			self.nodes[i]:clearLinkedList()
+		end
+		createNodeTree(self)
+		if self.deleteAfterGotten then
+			for i=1, #self.nodes do
+				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("disable"))
+			end
+		end
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
