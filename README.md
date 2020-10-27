@@ -43,6 +43,12 @@ msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("new_node"))
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO1")})
 ```
 
+### Return Random Node
+  Message will get a random node from the nodes list and return the url of the node to the sender with the message: message_id = hash("random_node"), message.node
+```
+msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
+```
+
 ### debug
   This message will force on debug node to show all nodes on the map as well as the connections between them.
 ```
