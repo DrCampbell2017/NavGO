@@ -1,0 +1,33 @@
+local function InitMoveCharacter(self)
+	--Go to node go.get_id("/NavGO_NodeGO1")
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO1")})
+end
+
+local function move2(self)
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO5")})
+end
+
+------------------
+--Core Functions--
+------------------
+
+function init(self)
+	timer.delay(.5, false, InitMoveCharacter)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("contact_point_response") then
+		if message.group == hash("wall") then
+			local newpos = go.get_position() + message.normal * message.distance
+			go.set_position(newpos)
+		end
+	elseif message_id == hash("path_to_follow") then
+		local delay = 0
+		local path = message.path
+		for i=1, #path do
+			go.animate(go.get_id(), "position", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(path[i].x, path[i].y, 1), go.EASING_LINEAR, 1, delay)
+			delay = delay + 1
+		end
+		timer.delay(3, false, move2)
+	end
+end
