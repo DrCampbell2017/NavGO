@@ -7,6 +7,10 @@ local function redraw(self)
 	--msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("debug"))
 end
 
+local function stop(self)
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("final"))
+end
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 
@@ -17,6 +21,7 @@ function init(self)
 	message.nodeNeighborRange = 500
 	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("init"), message)
 	timer.delay(5, false, redraw)
+	timer.delay(15, false, stop)
 end
 
 function on_input(self, action_id, action)

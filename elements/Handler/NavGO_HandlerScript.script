@@ -175,10 +175,11 @@ function init(self)
 	--Debug
 	self.debug = false
 	self.deleteAfterGotten = false
+	self.active = false
 end
 
 function update(self, dt)
-	if self.nodePathsFound and self.debug then
+	if self.nodePathsFound and self.debug and self.active then
 		for i=1, #self.nodes do
 			local innerList = self.nodes[i]:getLinkedNodeList()
 			local from = self.nodes[i]:getPosition()
@@ -205,37 +206,69 @@ function on_message(self, message_id, message, sender)
 			msg.post(sender, hash("disable"))
 		end
 	elseif message_id == hash("return_all_nodes") then
-		local nodes = {}
-		for i=1, #self.nodes do
-			local url = self.nodes[i]:getObjID()
-			table.insert(nodes, url)
+		if self.active then
+			local nodes = {}
+			for i=1, #self.nodes do
+				local url = self.nodes[i]:getObjID()
+				table.insert(nodes, url)
+			end
+			msg.post(sender, hash("all_nodes"), { nodes = nodes } )
+		else
+			print("WARNING: " .. tostring( sender ) .. " attempted to call a function in the NavGO handler before initializing the handler.")
 		end
-		msg.post(sender, hash("all_nodes"), { nodes = nodes } )
 	elseif message_id == hash("return_random_node") then
-		local randomNode = self.nodes[math.random(1, #self.nodes)]
-		local randomURL = randomNode:getObjID()
-		msg.post(sender, hash("random_node"), { node = randomURL } )
+		if self.active then
+			local randomNode = self.nodes[math.random(1, #self.nodes)]
+			local randomURL = randomNode:getObjID()
+			msg.post(sender, hash("random_node"), { node = randomURL } )
+		else
+			print("WARNING: " .. tostring( sender ) .. " attempted to call a function in the NavGO handler before initializing the handler.")
+		end
 
 	elseif message_id == hash("generate_path") then
 		--Check if to point exists on path
-		local exists = findNodeWithID(self, message.target)
-		assert(exists, "ERROR: Target node must exist on the path.")
-		--Do Path
-		local fromGO = sender
-		local to = message.target
-		local path = A_Star(self, fromGO, to)
-		local action = {}
-		action.path = path
-		msg.post(sender, hash("path_to_follow"), action)
-
-	elseif message_id == hash("debug") then
-		self.debug = true
-		for i=1, #self.nodes do
-			local id = self.nodes[i]:getObjID()
-			msg.post(id, hash("debug"))
+		if self.active then
+			local exists = findNodeWithID(self, message.target)
+			assert(exists, "ERROR: Target node must exist on the path.")
+			--Do Path
+			local fromGO = sender
+			local to = message.target
+			local path = A_Star(self, fromGO, to)
+			local action = {}
+			action.path = path
+			msg.post(sender, hash("path_to_follow"), action)
+		else
+			print("WARNING: " .. tostring( sender ) .. " attempted to call a function in the NavGO handler before initializing the handler.")
 		end
 
+	elseif message_id == hash("debug") then
+		if self.active then
+			self.debug = true
+			for i=1, #self.nodes do
+				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("debug"))
+			end
+		else
+			print("WARNING: " .. tostring( sender ) .. " attempted to call a function in the NavGO handler before initializing the handler.")
+		end
+
+	elseif message_id == hash("final") then
+		--Use for clearning everything to reset before used again
+		self.active = false
+		self.nodesGotten = false
+		self.nodes = {}
+		self.nodePathsFound = false
+
+		--User Set Values
+		self.valueRange = 500
+		self.collisions = {}
+
+		--Debug
+		self.debug = false
+		self.deleteAfterGotten = false
+
 	elseif message_id == hash("init") then
+		self.active = true
 		assert(message.collisions, "Collisions must be provided to use the init statement.")
 		self.collisions = message.collisions
 		
@@ -280,21 +313,25 @@ function on_message(self, message_id, message, sender)
 		end
 			
 	elseif message_id == hash("redraw_path") then
-		if self.deleteAfterGotten then
-			for i=1, #self.nodes do
-				local id = self.nodes[i]:getObjID()
-				msg.post(id, hash("enable"))
+		if self.active then
+			if self.deleteAfterGotten then
+				for i=1, #self.nodes do
+					local id = self.nodes[i]:getObjID()
+					msg.post(id, hash("enable"))
+				end
 			end
-		end
-		for i=1, #self.nodes do
-			self.nodes[i]:clearLinkedList()
-		end
-		createNodeTree(self)
-		if self.deleteAfterGotten then
 			for i=1, #self.nodes do
-				local id = self.nodes[i]:getObjID()
-				msg.post(id, hash("disable"))
+				self.nodes[i]:clearLinkedList()
 			end
+			createNodeTree(self)
+			if self.deleteAfterGotten then
+				for i=1, #self.nodes do
+					local id = self.nodes[i]:getObjID()
+					msg.post(id, hash("disable"))
+				end
+			end
+		else
+			print("WARNING: " .. tostring( sender ) .. " attempted to call a function in the NavGO handler before initializing the handler.")
 		end
 	end
 end

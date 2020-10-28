@@ -35,7 +35,6 @@ function on_message(self, message_id, message, sender)
 		local delay = 0
 		local path = message.path
 		for i=1, #path do
-			print("Going to: " .. tostring( vmath.vector3(path[i].x, path[i].y, 1) ))
 			go.animate(go.get_id(), "position", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(path[i].x, path[i].y, 1), go.EASING_LINEAR, 1, delay)
 			delay = delay + 1
 		end
