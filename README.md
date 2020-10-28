@@ -66,3 +66,9 @@ msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("debug"))
 ```
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("redraw_path"))
 ```
+
+### final 
+  This message will cause the NavGo to reset to a default state. Must be re-initialized before it can be used again.
+```
+msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("final"))
+```
