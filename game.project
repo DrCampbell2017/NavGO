@@ -30,7 +30,7 @@ gravity_y = -1000.0
 scale = 0.01
 
 [library]
-include_dirs = elements
+include_dirs = navGo_pathfinding
 
 [sprite]
 max_count = 256

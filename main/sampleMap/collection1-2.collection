@@ -1,7 +1,7 @@
 name: "default"
 instances {
   id: "NavGO_NodeGO"
-  prototype: "/elements/Node/NavGO_NodeGO.go"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
   position {
     x: -155.0
     y: 101.0
@@ -21,7 +21,7 @@ instances {
 }
 instances {
   id: "NavGO_NodeGO1"
-  prototype: "/elements/Node/NavGO_NodeGO.go"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
   position {
     x: -531.0
     y: 101.0
@@ -41,7 +41,7 @@ instances {
 }
 instances {
   id: "NavGO_NodeGO2"
-  prototype: "/elements/Node/NavGO_NodeGO.go"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
   position {
     x: -545.0
     y: 415.0

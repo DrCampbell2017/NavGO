@@ -1,6 +1,7 @@
 local function InitMoveCharacter(self)
 	--Go to node go.get_id("/NavGO_NodeGO1")
-	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO1")})
+	--msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO1")})
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path_to_random_node"), {target = go.get_id("/NavGO_NodeGO1")})
 end
 
 local function move2(self)
@@ -59,6 +60,6 @@ function on_message(self, message_id, message, sender)
 			table.insert(self.nodesList, message.nodes[i])
 		end
 	elseif message_id == hash("add_nodes_sent") then
-		timer.delay(.05, false, allNodesGotten)
+		allNodesGotten(self)
 	end
 end
