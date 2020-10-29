@@ -1,11 +1,16 @@
 local function InitMoveCharacter(self)
 	--Go to node go.get_id("/NavGO_NodeGO1")
-	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/collection1-2/NavGO_NodeGO2")})
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO1")})
 end
 
 local function move2(self)
 	--msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
-	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_all_nodes"))
+	if #self.nodesList == 0 then
+		msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_all_nodes"))
+	else
+		local node = self.nodesList[ math.random(1,#self.nodesList) ]
+		msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = node})
+	end
 end
 
 local function randomMoceCharacter(self, node)
@@ -13,12 +18,17 @@ local function randomMoceCharacter(self, node)
 	
 end
 
+local function allNodesGotten(self)
+	move2(self)
+end
+
 ------------------
 --Core Functions--
 ------------------
 
 function init(self)
-	timer.delay(.5, false, InitMoveCharacter)
+	timer.delay(1, false, InitMoveCharacter)
+	self.nodesList = {}
 end
 
 function on_message(self, message_id, message, sender)
@@ -39,9 +49,16 @@ function on_message(self, message_id, message, sender)
 			delay = delay + 1
 		end
 		timer.delay(delay, false, move2)
+
 	elseif message_id == hash("all_nodes") then
-		local nodes = message.nodes
-		local randomNode = nodes[ math.random(1, #nodes) ]
+		self.nodesList = message.nodes
+		local randomNode = self.nodesList[ math.random(1, #self.nodesList) ]
 		randomMoceCharacter(self, randomNode)
+	elseif message_id == hash("nodes_fraction") then
+		for i=1, #message.nodes do
+			table.insert(self.nodesList, message.nodes[i])
+		end
+	elseif message_id == hash("add_nodes_sent") then
+		timer.delay(.05, false, allNodesGotten)
 	end
 end

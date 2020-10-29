@@ -32,3 +32,6 @@ scale = 0.01
 [library]
 include_dirs = elements
 
+[sprite]
+max_count = 256
+

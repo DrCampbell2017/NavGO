@@ -212,7 +212,19 @@ function on_message(self, message_id, message, sender)
 				local url = self.nodes[i]:getObjID()
 				table.insert(nodes, url)
 			end
-			msg.post(sender, hash("all_nodes"), { nodes = nodes } )
+			if #nodes >= 50 then
+				local newNodes = {}
+				for i=1,#nodes do
+					table.insert(newNodes, nodes[i])
+					if i%50 == 0 then
+						msg.post(sender, hash("nodes_fraction"), { nodes = newNodes } )
+						newNodes = {}
+					end
+				end
+				msg.post(sender, hash("add_nodes_sent"))
+			else
+				msg.post(sender, hash("all_nodes"), { nodes = nodes } )
+			end
 		else
 			print("WARNING: " .. tostring( sender ) .. " attempted to call a function in the NavGO handler before initializing the handler.")
 		end

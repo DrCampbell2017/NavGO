@@ -16,9 +16,9 @@ function init(self)
 
 	local message = {}
 	message.collisions = { hash("wall") }
-	message.debug = true
+	message.debug = false
 	message.deleteNodeAfterGotten = true
-	message.nodeNeighborRange = 500
+	message.nodeNeighborRange = 400
 	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("init"), message)
 	timer.delay(5, false, redraw)
 	timer.delay(15, false, stop)

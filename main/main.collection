@@ -39,12 +39,12 @@ instances {
     z: 1.0
   }
 }
-collection_instances {
-  id: "collection1-1"
-  collection: "/main/sampleMap/collection1-1.collection"
+instances {
+  id: "NavGO_NodeGO"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
   position {
-    x: 652.0
-    y: 0.0
+    x: 889.0
+    y: 416.0
     z: 0.0
   }
   rotation {
@@ -59,12 +59,4472 @@ collection_instances {
     z: 1.0
   }
 }
-collection_instances {
-  id: "collection1-2"
-  collection: "/main/sampleMap/collection1-2.collection"
+instances {
+  id: "NavGO_NodeGO1"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
   position {
-    x: 659.0
+    x: 889.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
     y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO2"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1198.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO3"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1199.0
+    y: 422.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO4"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 726.0
+    y: 261.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO5"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: 416.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO6"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO7"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 575.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO8"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 576.0
+    y: 422.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO9"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 103.0
+    y: 261.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO10"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 581.0
+    y: 867.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO11"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 581.0
+    y: 553.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO12"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 890.0
+    y: 553.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO13"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 891.0
+    y: 873.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO14"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 418.0
+    y: 712.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO15"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: 1289.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO16"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: 975.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO17"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 575.0
+    y: 975.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO18"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 576.0
+    y: 1295.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO19"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 103.0
+    y: 1134.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO20"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 913.0
+    y: 1296.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO21"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 913.0
+    y: 982.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO22"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1222.0
+    y: 982.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO23"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1223.0
+    y: 1302.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO24"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 750.0
+    y: 1141.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO25"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2194.0
+    y: 982.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO26"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: 1289.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO27"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1699.0
+    y: 712.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO28"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1384.0
+    y: 261.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO29"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1856.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO30"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2170.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO31"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2171.0
+    y: 553.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO32"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1384.0
+    y: 1134.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO33"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1857.0
+    y: 422.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO34"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1857.0
+    y: 1295.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO35"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: 975.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO36"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2172.0
+    y: 873.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO37"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2479.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO38"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1856.0
+    y: 975.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO39"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2170.0
+    y: 416.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO40"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2503.0
+    y: 982.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO41"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1862.0
+    y: 553.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO42"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2007.0
+    y: 261.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO43"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2031.0
+    y: 1141.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO44"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1862.0
+    y: 867.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO45"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO46"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2504.0
+    y: 1302.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO47"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2480.0
+    y: 422.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO48"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2194.0
+    y: 1296.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO49"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: 416.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO50"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -393.0
+    y: 982.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO51"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: 1289.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO52"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -888.0
+    y: 712.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO53"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1203.0
+    y: 261.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO54"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -731.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO55"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -417.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO56"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -416.0
+    y: 553.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO57"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1203.0
+    y: 1134.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO58"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -730.0
+    y: 422.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO59"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -730.0
+    y: 1295.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO60"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: 975.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO61"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -415.0
+    y: 873.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO62"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -108.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO63"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -731.0
+    y: 975.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO64"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -417.0
+    y: 416.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO65"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -84.0
+    y: 982.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO66"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -725.0
+    y: 553.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO67"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -580.0
+    y: 261.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO68"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -556.0
+    y: 1141.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO69"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -725.0
+    y: 867.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO70"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: 102.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO71"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -83.0
+    y: 1302.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO72"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -107.0
+    y: 422.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO73"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -393.0
+    y: 1296.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO74"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: 416.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO75"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -888.0
+    y: -652.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO76"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 913.0
+    y: -382.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO77"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -415.0
+    y: -491.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO78"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -580.0
+    y: -1103.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO79"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2171.0
+    y: -811.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO80"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: -75.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO81"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 418.0
+    y: -652.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO82"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -725.0
+    y: -497.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO83"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: -75.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO84"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1857.0
+    y: -942.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO85"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 103.0
+    y: -1103.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO86"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: -948.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO87"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 575.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO88"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2480.0
+    y: -942.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO89"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1856.0
+    y: -389.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO90"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -556.0
+    y: -223.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO91"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2170.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO92"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 889.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO93"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -417.0
+    y: -948.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO94"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 890.0
+    y: -811.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO95"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2504.0
+    y: -62.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO96"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -731.0
+    y: -389.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO97"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -107.0
+    y: -942.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO98"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 103.0
+    y: -230.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO99"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 576.0
+    y: -942.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO100"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -393.0
+    y: -382.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO101"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2194.0
+    y: -68.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO102"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -393.0
+    y: -68.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO103"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 576.0
+    y: -69.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO104"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1857.0
+    y: -69.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO105"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: -389.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO106"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1699.0
+    y: -652.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO107"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 891.0
+    y: -491.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO108"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: -389.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO109"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -416.0
+    y: -811.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO110"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: -948.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO111"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -417.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO112"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2007.0
+    y: -1103.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO113"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1198.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO114"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -108.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO115"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 575.0
+    y: -389.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO116"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO117"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1384.0
+    y: -1103.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO118"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 889.0
+    y: -948.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO119"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1222.0
+    y: -382.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO120"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -83.0
+    y: -62.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO121"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1856.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO122"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 581.0
+    y: -811.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO123"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 726.0
+    y: -1103.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO124"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1862.0
+    y: -811.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO125"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2170.0
+    y: -948.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO126"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 750.0
+    y: -223.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO127"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2031.0
+    y: -223.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO128"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: -389.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO129"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1862.0
+    y: -497.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO130"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -730.0
+    y: -69.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO131"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -84.0
+    y: -382.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO132"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 581.0
+    y: -497.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO133"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1203.0
+    y: -1103.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO134"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -731.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO135"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2479.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO136"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO137"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1223.0
+    y: -62.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO138"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: -75.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO139"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2503.0
+    y: -382.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO140"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2172.0
+    y: -491.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO141"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1203.0
+    y: -230.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO142"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2194.0
+    y: -382.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO143"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1199.0
+    y: -942.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO144"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1384.0
+    y: -230.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO145"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -730.0
+    y: -942.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO146"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 913.0
+    y: -68.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO147"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: -948.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO148"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: -1262.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO149"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -725.0
+    y: -811.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO150"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -888.0
+    y: 2098.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO151"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 913.0
+    y: 2368.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO152"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -415.0
+    y: 2259.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO153"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -580.0
+    y: 1647.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO154"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2171.0
+    y: 1939.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO155"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: 2675.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO156"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 418.0
+    y: 2098.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO157"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -725.0
+    y: 2253.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO158"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: 2675.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO159"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1857.0
+    y: 1808.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO160"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 103.0
+    y: 1647.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO161"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: 1802.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO162"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 575.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO163"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2480.0
+    y: 1808.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO164"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1856.0
+    y: 2361.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO165"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -556.0
+    y: 2527.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO166"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2170.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO167"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 889.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO168"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -417.0
+    y: 1802.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO169"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 890.0
+    y: 1939.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO170"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2504.0
+    y: 2688.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO171"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -731.0
+    y: 2361.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO172"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -107.0
+    y: 1808.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO173"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 103.0
+    y: 2520.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO174"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 576.0
+    y: 1808.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO175"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -393.0
+    y: 2368.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO176"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2194.0
+    y: 2682.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO177"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -393.0
+    y: 2682.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO178"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 576.0
+    y: 2681.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO179"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1857.0
+    y: 2681.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO180"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: 2361.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO181"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1699.0
+    y: 2098.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO182"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 891.0
+    y: 2259.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO183"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: 2361.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO184"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -416.0
+    y: 1939.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO185"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: 1802.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO186"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -417.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO187"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2007.0
+    y: 1647.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO188"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1198.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO189"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -108.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO190"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 575.0
+    y: 2361.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO191"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1547.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO192"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1384.0
+    y: 1647.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO193"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 889.0
+    y: 1802.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO194"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1222.0
+    y: 2368.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO195"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -83.0
+    y: 2688.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO196"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1856.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO197"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 581.0
+    y: 1939.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO198"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 726.0
+    y: 1647.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO199"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1862.0
+    y: 1939.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO200"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2170.0
+    y: 1802.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO201"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 750.0
+    y: 2527.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO202"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2031.0
+    y: 2527.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO203"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: 2361.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO204"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1862.0
+    y: 2253.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO205"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -730.0
+    y: 2681.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO206"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -84.0
+    y: 2368.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO207"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 581.0
+    y: 2253.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO208"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1203.0
+    y: 1647.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO209"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -731.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO210"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2479.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO211"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO212"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1223.0
+    y: 2688.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO213"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: 2675.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO214"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2503.0
+    y: 2368.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO215"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2172.0
+    y: 2259.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO216"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1203.0
+    y: 2520.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO217"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 2194.0
+    y: 2368.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO218"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1199.0
+    y: 1808.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO219"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 1384.0
+    y: 2520.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO220"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -730.0
+    y: 1808.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO221"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 913.0
+    y: 2682.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO222"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: 266.0
+    y: 1802.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO223"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -1040.0
+    y: 1488.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO224"
+  prototype: "/elements/Node/NavGO_NodeGO.go"
+  position {
+    x: -725.0
+    y: 1939.0
     z: 0.0
   }
   rotation {
@@ -180,7 +4640,7 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 351.0
+    x: 948.0
     y: 166.0
     z: 0.0
   }
@@ -241,8 +4701,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 835.0
-    y: 8.0
+    x: 325.0
+    y: 166.0
     z: 0.0
   }
   rotation {
@@ -302,8 +4762,740 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 234.0
-    y: 366.0
+    x: 640.0
+    y: 617.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map3"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 325.0
+    y: 1039.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map4"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 972.0
+    y: 1046.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map5"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1921.0
+    y: 617.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map6"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1606.0
+    y: 1039.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map7"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 2229.0
+    y: 166.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map8"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 2253.0
+    y: 1046.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map9"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1606.0
+    y: 166.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map10"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -666.0
+    y: 617.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map11"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -981.0
+    y: 1039.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map12"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -358.0
+    y: 166.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map13"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -334.0
+    y: 1046.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map14"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -981.0
+    y: 166.0
     z: 0.0
   }
   rotation {
