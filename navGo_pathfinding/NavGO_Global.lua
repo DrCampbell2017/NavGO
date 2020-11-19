@@ -70,7 +70,7 @@ function NAVGO.GENERATE_PATH_TO_RANDOM_NODE(myUrl)
 	end
 end
 
-local function distanceBetweem(v1, v2)
+local function _distanceBetweem(v1, v2)
 	return math.sqrt( (v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y) )
 end
 
@@ -81,7 +81,7 @@ function NAVGO.GET_NODE_NEAREST_TO_POSITION(position)
 		local smallestNode = nil
 		for key, value in pairs(NAVGO.NODE_TREE) do
 			local myPosition = value:getPosition()
-			local dist = distanceBetweem(position, myPosition)
+			local dist = _distanceBetweem(position, myPosition)
 			if smallestNode == nil or dist < smallestDistance then
 				smallestNode = value
 				smallestDistance = dist
