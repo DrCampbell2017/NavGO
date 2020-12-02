@@ -40,27 +40,27 @@ msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("new_node"))
 ```
 
 ### Generate Path
-  Message must contain a value called 'target' that is a node on the path.This command will use A* to generate the requested path using the nodes available. When finished, the NavGO_HandlerGO will send a message with 'message_id hash("path_to_follow")' and a variable 'message.path' that contains a list of vector3 values (excluding current position) that leads to the end goal.
+  Message must contain a value called 'target' that is a node on the path.This command will use A* to generate the requested path using the nodes available. When finished, the NavGO_HandlerGO will send a message with 'message_id hash("path_to_follow")' and a variable 'message.path' that contains a list of vector3 values (excluding current position) that leads to the end goal. If a path was not found, the NavGO_HandlerGO will send a message with 'message_id hash("path_not_found")'. If the NavGo handler was not initialized, a warning message with print in the console. 
 ```
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO1")})
 ```
 
 ### Generate Path To Random Node
-  This will generate a path to a random node in the tree and return it to the sender using 'message_id hash("path_to_follow")' and a variable 'message.path' that contains a list of vector3 values. This will not exclude any nodes (including a node the sender maybe ontop of).
+  This will generate a path to a random node in the tree and return it to the sender using 'message_id hash("path_to_follow")' and a variable 'message.path' that contains a list of vector3 values. This will not exclude any nodes (including a node the sender maybe ontop of). If a path was not found, the NavGO_HandlerGO will send a message with 'message_id hash("path_not_found")'. If the NavGo handler was not initialized, a warning message with print in the console. 
 
 ```
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path_to_random_node"), {target = go.get_id("/NavGO_NodeGO1")})
 ```
 
 ### Return Random Node
-  Message will get a random node from the nodes list and return the url of the node to the sender with the message: message_id = hash("random_node"), message.node
+  Message will get a random node from the nodes list and return the url of the node to the sender with the message: message_id = hash("random_node"), message.node . If the NavGo handler was not initialized, a warning message with print in the console. 
 ```
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
 ```
 
 ### Return All Nodes
   Message will send a list back of all node URL's in the tree. Will be sent with message_id hash("all_nodes") and message.nodes
-  *note* If your tree has more then 50 nodes in it, due to buffer size limits, the message will be sent back in groups of 50 using message_id hash("nodes_fraction") with message message.node followed by the message_id hash("add_nodes_sent") to confirm everything was sent. With more then 50 nodes on the path, it is recommended to use NavGO_Global instead of the handler. See documentation for NavGO handler bellow.
+  *note* If your tree has more then 50 nodes in it, due to buffer size limits, the message will be sent back in groups of 50 using message_id hash("nodes_fraction") with message message.node followed by the message_id hash("add_nodes_sent") to confirm everything was sent. With more then 50 nodes on the path, it is recommended to use NavGO_Global instead of the handler. See documentation for NavGO handler bellow. If the NavGo handler was not initialized, a warning message with print in the console. 
  ```
  msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_all_nodes"))
  ```
@@ -78,13 +78,13 @@ msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
  ```
 
 ### debug
-  This message will force on debug node to show all nodes on the map as well as the connections between them.
+  This message will force on debug node to show all nodes on the map as well as the connections between them. If the NavGo handler was not initialized, a warning message with print in the console. 
 ```
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("debug"))
 ```
 
 ### Redraw Path
-  This message will force the map to be redrawn, all links between nodes will be recalculated.
+  This message will force the map to be redrawn, all links between nodes will be recalculated. If the NavGo handler was not initialized, a warning message with print in the console. 
 ```
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("redraw_path"))
 ```
@@ -110,13 +110,18 @@ NAVGO.IS_READY()
 ### NAVGO.RETURN_ALL_NODES()
 
 Returns a list of all url's for nodes in the tree.
+
+Will return nothing if the NavGo Handler has not been initialized.
+
 ```
  NAVGO.RETURN_ALL_NODES()
 ```
 
 ### NAVGO.GET_RANDOM_NODE()
 
-Returns a random node from the tree.
+Returns a random node from the tree. 
+
+Will return nothing if the NavGo Handler has not been initialized.
 
 ```
 NAVGO.GET_RANDOM_NODE()
@@ -124,17 +129,53 @@ NAVGO.GET_RANDOM_NODE()
 
 ### NAVGO.GENERATE_PATH(targetURL, myURL)
 
-Will generate a path between myURL and the targetURL. Will return the path as a list of vector3 values.
+Will generate a path between myURL and the targetURL. This function returns two values, 'Path' and 'found'. 
+- Path is a table of vector3 positions leading from the current position to the end position, will be empty table '{}' if no path is possible. 
+- Found is a boolean value that will be true if the path does exist, false if no path is found. 
+
+Will return nothing if the NavGo Handler has not been initialized.
+
+*Note You can check if a path exists by either checking if the path has no nodes or if the found value is true/false
 ```
-NAVGO.GENERATE_PATH(targetURL, myURL)
+local path, found = NAVGO.GENERATE_PATH(targetURL, myURL)
 ```
 
 ### NAVGO.GENERATE_PATH_TO_RANDOM_NODE(myUrl)
  
 Will generate a path from the current object's place to a random node in the tree. This includes the possibility of having the node currently on be returned.
+This function returns two values, 'Path' and 'found'. 
+- Path is a table of vector3 positions leading from the current position to the end position, will be empty table '{}' if no path is possible. 
+- Found is a boolean value that will be true if the path does exist, false if no path is found.
+
+Will return nothing if the NavGo Handler has not been initialized.
+
+*Note You can check if a path exists by either checking if the path has no nodes or if the found value is true/false
 
 ```
-NAVO.GENERATE_PATH_TO_RANDOM_NODE(myUrl)
+local path, found = NAVO.GENERATE_PATH_TO_RANDOM_NODE(myUrl)
+```
+
+### NAVGO.GET_NODES_IN_RANGE(centerPosition, range)
+
+Will generate a table of navigation node urls that are within the range of a given position. Take two arguments, 'centerPosition' and 'range'. CenterPosition will be the center of the area you want to check. Range is the distance from the center point that you want to measure and include nodes from.
+
+Will return nothing if the NavGo Handler has not been initialized.
+
+*Note This calculation will include nodes that are within range of the center position, no path is guaranteed between any of the nodes. Example: Two nodes on opposite sides of a wall will be included, even if an NPC cannot travel directly from one to another.
+
+```
+local nodesNearPosition = NAVGO.GET_NODES_IN_RANGE(centerPosition, range)
+```
+
+### NAVGO.GET_NODE_NEAREST_TO_POSITION(position)
+Will return the url of the navigation node that is closest to the center position. This function takes one argument, 'position'. Position is the locaion where you want to measure the nearest node to. 
+
+Will return nothing if the NavGo Handler has not been initialized.
+
+*Note This caluclation does not guarantee a path from the position to the suggested node. Example: the node could be on the other side of a wall.
+
+```
+local nearestNode = NAVGO.GET_NODE_NEAREST_TO_POSITION(position)
 ```
 
 *Note* Both NAVGO._FINAL and NAVGO._INIT are private functions and should not be called. 
