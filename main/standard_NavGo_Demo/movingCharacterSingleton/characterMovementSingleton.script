@@ -1,0 +1,34 @@
+require("navGo_pathfinding.NavGO_Global")
+
+local function moveCharacter(self)
+	local path, found = NAVGO.GENERATE_PATH_TO_RANDOM_NODE( go.get_id() )
+	if not found then
+		print("Singleton - NO PATH FOUND")
+	else
+		print("Singleton - PATH FOUND")
+		local delay = 0
+		for i=1, #path do
+			go.animate(go.get_id(), "position", go.PLAYBACK_ONCE_FORWARD, vmath.vector3(path[i].x, path[i].y, 1), go.EASING_LINEAR, 1, delay)
+			delay = delay + 1
+		end
+		timer.delay(delay, false, moveCharacter)
+	end
+end
+
+
+------------------
+--Core functions--
+------------------
+
+function init(self)
+	timer.delay(1, false, moveCharacter)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("contact_point_response") then
+		if message.group == hash("wall") then
+			local newpos = go.get_position() + message.normal * message.distance
+			go.set_position(newpos)
+		end
+	end
+end

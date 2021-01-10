@@ -1,0 +1,23 @@
+go.property("Node_ID", -1)
+go.property("Node_Next", -1)
+go.property("Independent_path", false) --true means it will not be included in the rest of the NAVGO calculations
+
+function init(self)
+	--Let Handler know I exist
+	local message = {}
+	message.Node_ID = self.Node_ID
+	message.Node_Next = self.Node_Next
+	message.Independent_path = self.Independent_path
+	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("new_directional_node"), message)
+	go.set("#sprite", "scale", vmath.vector3(0, 0, 0))
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("debug") then
+		go.set("#sprite", "scale", vmath.vector3(1, 1, 1))
+	elseif message_id == hash("hide") then
+		go.set("#sprite", "scale", vmath.vector3(0, 0, 0))
+	elseif message_id == hash("destory") then
+		msg.post(go.get_id(), "disable")
+	end
+end

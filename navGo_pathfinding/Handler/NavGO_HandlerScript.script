@@ -1,6 +1,7 @@
 require("navGo_pathfinding.Handler.a_star_core")
 require("navGo_pathfinding.NavGO_Global")
 require("navGo_pathfinding.Node.nodeModule")
+require("navGo_pathfinding.directionalNode.directionalModule")
 
 local function distance(vec1, vec2)
 	return math.ceil( math.sqrt( math.pow(vec1.x - vec2.x, 2) + math.pow(vec1.y - vec2.y, 2) ) )
@@ -40,7 +41,75 @@ local function createNodeTree(self)
 	NAVGO._INIT(self.nodes, self.collisions)
 	if self.init_sender ~= nil then
 		msg.post(self.init_sender, "NavGO_Ready")
-		self.init_sender = nil
+	end
+end
+
+local function createDirectionalNodeTree(self)
+	-- Link to eachother
+	for i=1, #self.directionalNodes do
+		local currentNode = self.directionalNodes[i]
+		local indexSearchingFor = currentNode:getNextID()
+		local next_node = self.directionalNodes[indexSearchingFor]
+		-- brief check
+		local result = physics.raycast(currentNode:getPosition(), next_node:getPosition(), self.collisions, false)
+		if result ~= nil then
+			--Hits something!
+			print("WARNING: Path from node " .. tostring( currentNode:getObjID() ) .. " to " .. tostring( next_node:getObjID() ) .. " is obstructed." )
+		end
+		--Add to path
+		currentNode:addToLinkedNodesList( next, 1)
+	end
+	NAVGO._INIT_DIRECTIONS_PATH(self.directionalNodes)
+	if self.init_sender ~= nil then
+		msg.post(self.init_sender, "NavGO_Directional_Ready")
+	end
+end
+
+-----------------------------
+-- Handle New Node Messages--
+-----------------------------
+
+local function new_node(self, message, sender)
+	if not self.nodesGotten then
+		self.nodesGotten = true
+		timer.delay(.05, false, createNodeTree)
+	end
+	local pos = go.get_position(sender)
+	local newNode = navNode.New(sender, pos)
+	table.insert(self.nodes, newNode)
+	if self.debug then
+		msg.post(sender, hash("debug"))
+	elseif self.deleteAfterGotten then
+		msg.post(sender, hash("disable"))
+	end
+end
+
+local function new_directional_node(self, message, sender)
+	-- if in main map, then include
+	if not message.Independent_path then
+		new_node(self, message, sender)
+	end
+
+	if not self.directionalNodesGotten then
+		self.directionalNodesGotten = true
+		timer.delay(.05, false, createDirectionalNodeTree)
+	end
+
+	--Add to directional queue
+	local newNodeID = message.Node_ID
+	if self.directionalNodes[newNodeID] == nil then
+		local pos = go.get_position(sender)
+		local newNode = directional_node.New(sender, pos, newNodeID, message.Node_Next)
+		self.directionalNodes[message.Node_ID] = newNode
+	else
+		local conflictingNodeSender = self.directionalNodes[newNodeID]:getObjID()
+		error("ERROR: NODE URL " .. tostring( conflictingNodeSender ) .. " and " .. tostring(sender) .. " share the same ID of " .. tostring( newNodeID ) .. ".\nChange the ID of one to a unique ID." )
+	end
+
+	if self.debug then
+		msg.post(sender, hash("debug"))
+	elseif self.deleteAfterGotten then
+		msg.post(sender, hash("disable"))
 	end
 end
 
@@ -54,6 +123,10 @@ function init(self)
 	self.nodePathsFound = false
 	self.init_sender = nil
 
+	--Directional Nodes
+	self.directionalNodesGotten = false
+	self.directionalNodes = {}
+	
 	--User Set Values
 	self.valueRange = 500
 	self.collisions = {}
@@ -74,23 +147,21 @@ function update(self, dt)
 				msg.post("@render:", "draw_line", { start_point = from, end_point = to, color = vmath.vector4(1,0,0,1) })
 			end
 		end
+		for i=1, #self.directionalNodes do
+			local from = self.directionalNodes[i]:getPosition()
+			local to = self.directionalNodes[self.directionalNodes[i]:getNextID()]:getPosition()
+			msg.post("@render:", "draw_line", { start_point = from, end_point = to, color = vmath.vector4(0,0,1,1) })
+		end
 	end
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("new_node") then
-		if not self.nodesGotten then
-			self.nodesGotten = true
-			timer.delay(.05, false, createNodeTree)
-		end
-		local pos = go.get_position(sender)
-		local newNode = navNode.New(sender, pos)
-		table.insert(self.nodes, newNode)
-		if self.debug then
-			msg.post(sender, hash("debug"))
-		elseif self.deleteAfterGotten then
-			msg.post(sender, hash("disable"))
-		end
+		new_node(self, message, sender)
+		
+	elseif message_id == hash("new_directional_node") then
+		new_directional_node(self, message, sender)
+		
 	elseif message_id == hash("return_all_nodes") then
 		if self.active then
 			local nodes = {}
@@ -131,10 +202,15 @@ function on_message(self, message_id, message, sender)
 			--Do Path
 			local fromGO = sender
 			local to = message.target
-			local path = A_STAR.A_Star(self.nodes, self.collisions, fromGO, to)
-			local action = {}
-			action.path = path
-			msg.post(sender, hash("path_to_follow"), action)
+			local path, found = A_STAR.A_Star(self.nodes, self.collisions, fromGO, to)
+			if found then
+				local action = {}
+				action.path = path
+				msg.post(sender, hash("path_to_follow"), action)
+			else
+				msg.post(sender, hash("path_not_found"))
+			end
+			
 		else
 			print("WARNING: " .. tostring( sender ) .. " attempted to call a function in the NavGO handler before initializing the handler.")
 		end
@@ -145,10 +221,14 @@ function on_message(self, message_id, message, sender)
 			local fromGO = sender
 			local senderPosition = go.get_position(sender)
 			local to = self.nodes[math.random(1,#self.nodes)]:getObjID()
-			local path = A_STAR.A_Star(self.nodes, self.collisions, fromGO, to)
-			local action = {}
-			action.path = path
-			msg.post(sender, hash("path_to_follow"), action)
+			local path, found = A_STAR.A_Star(self.nodes, self.collisions, fromGO, to)
+			if found then
+				local action = {}
+				action.path = path
+				msg.post(sender, hash("path_to_follow"), action)
+			else
+				msg.post(sender, hash("path_not_found"))
+			end
 		else
 			print("WARNING: " .. tostring( sender ) .. " attempted to call a function in the NavGO handler before initializing the handler.")
 		end
@@ -158,6 +238,10 @@ function on_message(self, message_id, message, sender)
 			self.debug = true
 			for i=1, #self.nodes do
 				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("debug"))
+			end
+			for key, value in pairs(self.directionalNodes) do
+				local id = value:getObjID()
 				msg.post(id, hash("debug"))
 			end
 		else
@@ -202,10 +286,18 @@ function on_message(self, message_id, message, sender)
 				local id = self.nodes[i]:getObjID()
 				msg.post(id, hash("debug"))
 			end
+			for key, value in pairs(self.directionalNodes) do
+				local id = value:getObjID()
+				msg.post(id, hash("debug"))
+			end
 		else
 			self.debug = false
 			for i=1, #self.nodes do
 				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("hide"))
+			end
+			for key, value in pairs(self.directionalNodes) do
+				local id = value:getObjID()
 				msg.post(id, hash("hide"))
 			end
 		end
@@ -219,10 +311,19 @@ function on_message(self, message_id, message, sender)
 				msg.post(id, hash("hide"))
 				msg.post(id, hash("disable"))
 			end
+			for key, value in pairs(self.directionalNodes) do
+				local id = value:getObjID()
+				msg.post(id, hash("hide"))
+				msg.post(id, hash("disable"))
+			end
 		else
 			self.deleteAfterGotten = false
 			for i=1, #self.nodes do
 				local id = self.nodes[i]:getObjID()
+				msg.post(id, hash("enable"))
+			end
+			for key, value in pairs(self.directionalNodes) do
+				local id = value:getObjID()
 				msg.post(id, hash("enable"))
 			end
 		end
@@ -233,15 +334,27 @@ function on_message(self, message_id, message, sender)
 				for i=1, #self.nodes do
 					local id = self.nodes[i]:getObjID()
 					msg.post(id, hash("enable"))
+					self.nodes[i]:clearLinkedList()
 				end
-			end
-			for i=1, #self.nodes do
-				self.nodes[i]:clearLinkedList()
 			end
 			createNodeTree(self)
 			if self.deleteAfterGotten then
 				for i=1, #self.nodes do
 					local id = self.nodes[i]:getObjID()
+					msg.post(id, hash("disable"))
+				end
+			end
+
+			--Directional nodes
+			for key, value in pairs(self.directionalNodes) do
+				local id = value:getObjID()
+				msg.post(id, hash("enable"))
+				value:clearLinkedList()
+			end
+			createDirectionalNodeTree(self)
+			if self.deleteAfterGotten then
+				for key, value in pairs(self.directionalNodes) do
+					local id = value:getObjID()
 					msg.post(id, hash("disable"))
 				end
 			end

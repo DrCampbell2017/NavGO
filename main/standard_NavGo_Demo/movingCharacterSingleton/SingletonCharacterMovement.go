@@ -1,6 +1,6 @@
 components {
-  id: "SingletonCharacterMovement"
-  component: "/main/movingCharacterSingleton/SingletonCharacterMovement.script"
+  id: "characterMovementSingleton"
+  component: "/main/standard_NavGo_Demo/movingCharacterSingleton/characterMovementSingleton.script"
   position {
     x: 0.0
     y: 0.0
@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "tile_set: \"/main/movingCharacter/characterAtlas.atlas\"\n"
+  data: "tile_set: \"/main/standard_NavGo_Demo/movingCharacter/characterAtlas.atlas\"\n"
   "default_animation: \"enemy\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"

@@ -1,3 +1,14 @@
+go.property("spawnTestCharacters", true)
+
+local function spawnBlockedPathCharacter(self)
+	if self.spawnTestCharacters then
+		local pos = vmath.vector3(196, 500, 1)
+		local newCharacter = factory.create("/go#characterSpawnFactory", pos)
+		pos = vmath.vector3(196, 550, 1)
+		local newCharacterSingleton = factory.create("/go#characterSingletonSpawnFactory", pos)
+	end
+end
+
 -----------------
 --Core Funtions--
 -----------------
@@ -16,12 +27,14 @@ function init(self)
 
 	local message = {}
 	message.collisions = { hash("wall") }
-	message.debug = false
+	message.debug = true
 	message.deleteNodeAfterGotten = true
+	message.nodeNeighborRange = 400
 	message.nodeNeighborRange = 400
 	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("init"), message)
 	timer.delay(5, false, redraw)
 	timer.delay(15, false, stop)
+	timer.delay(4, false, spawnBlockedPathCharacter)
 end
 
 function on_input(self, action_id, action)

@@ -9,6 +9,8 @@ NAVGO = {}
 NAVGO.NODE_TREE = {}
 NAVGO.COLLISIONS = {}
 NAVGO.READY_TO_USE = false
+NAVGO.DIRECTIONS_READY = false
+NAVGO.DIRECTIONS_TREE = {}
 
 function NAVGO._INIT(tree, collisions)
 	NAVGO.NODE_TREE = tree
@@ -53,7 +55,8 @@ function NAVGO.GENERATE_PATH(targetURL, myURL)
 		assert(exists, "ERROR: Target node must exist on the path.")
 		local fromGO = myURL
 		local toGO = targetURL
-		return A_STAR.A_Star(NAVGO.NODE_TREE, NAVGO.COLLISIONS, fromGO, toGO)
+		local path, found = A_STAR.A_Star(NAVGO.NODE_TREE, NAVGO.COLLISIONS, fromGO, toGO)
+		return path, found
 	else
 		print("WARNING: NavGO is not yet ready to be used.")
 	end
@@ -63,8 +66,9 @@ function NAVGO.GENERATE_PATH_TO_RANDOM_NODE(myUrl)
 	if NAVGO.READY_TO_USE then
 		local fromGO = myUrl
 		local senderPosition = go.get_position(myUrl)
-		local to = NAVGO.NODE_TREE[math.random(1,#NAVGO.NODE_TREE)]:getObjID()
-		return A_STAR.A_Star(NAVGO.NODE_TREE, NAVGO.COLLISIONS, fromGO, to)
+		local toGO = NAVGO.NODE_TREE[math.random(1,#NAVGO.NODE_TREE)]:getObjID()
+		local path, found = A_STAR.A_Star(NAVGO.NODE_TREE, NAVGO.COLLISIONS, fromGO, toGO)
+		return path, found
 	else
 		print("WARNING: NavGO is not yet ready to use")
 	end
@@ -72,6 +76,19 @@ end
 
 local function _distanceBetweem(v1, v2)
 	return math.sqrt( (v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y) )
+end
+
+function NAVGO.GET_NODES_IN_RANGE(centerPosition, range)
+	if NAVGO.READY_TO_USE then
+		local nodesInRange = {}
+		for key, value in pairs(NAVGO.NODE_TREE) do
+			local myPosition = value:getPosition()
+			if _distanceBetweem(centerPosition, myPosition) <= range then
+				table.insert(nodesInRange, value:getObjID())
+			end
+		end
+		return nodesInRange
+	end
 end
 
 
@@ -93,8 +110,56 @@ end
 
 function NAVGO._FINAL()
 	NAVGO.NODE_TREE = {}
+	NAVGO.DIRECTIONS_TREE = {}
 	NAVGO.COLLISIONS = {}
 	NAVGO.READY_TO_USE = false
+	NAVGO.DIRECTIONS_READY = false
+end
+
+---------------------
+--Directional NavGO--
+---------------------
+
+function NAVGO.IS_DIRECTIONS_READY()
+	return NAVGO.DIRECTIONS_READY
+end
+
+function NAVGO._INIT_DIRECTIONS_PATH(tree)
+	NAVGO.DIRECTIONS_READY = true
+	NAVGO.DIRECTIONS_TREE = tree
+end
+
+function NAVGO.GET_PATH_FROM_DIRECTIONAL_ID(start_node_id, end_node_id)
+	if NAVGO.DIRECTIONS_READY then
+		local start_node = NAVGO.DIRECTIONS_TREE[start_node_id]:getObjID()
+		local end_node = NAVGO.DIRECTIONS_TREE[end_node_id]:getObjID()
+		
+		local found = false
+		local visted = {}
+		local path = {}
+
+		local currentNode = A_STAR.findNodeWithID(NAVGO.DIRECTIONS_TREE, start_node)
+		local endNode = A_STAR.findNodeWithID(NAVGO.DIRECTIONS_TREE, end_node)
+		local ID = currentNode:getObjID()
+		
+		while not found and visted[ID] == nil do
+			visted[ID] = true
+			local pos = currentNode:getPosition()
+			table.insert(path, pos)
+			if endNode == currentNode then
+				found = true
+			else
+				local nextNodeID = currentNode:getNextID()
+				currentNode = NAVGO.DIRECTIONS_TREE[nextNodeID]
+				ID = currentNode:getNumberID()
+			end
+		end
+		
+		return path, found
+	else
+		print("WARNING: NavGO Directional path is not yet ready to use.")
+		return {}, false
+	end
 end
 
 

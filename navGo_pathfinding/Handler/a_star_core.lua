@@ -14,13 +14,14 @@ end
 
 function A_STAR.findNodeWithID(tree, find)
 	local findPos = go.get_position(find)
-	for i=1, #tree do
-		if tree[i]:getPosition() == findPos then
-			return tree[i]
+	for key, value in pairs(tree) do
+		local testPos = value:getPosition()
+		if value:getPosition() == findPos then
+			return value
 		end
 	end
 	--If not found
-	error("To Point must be on the path.")
+	error("Point " .. tostring( find ) .. " must be on the path.")
 end
 
 function A_STAR.createTempNode(tree, collisions, fromGO)
@@ -64,7 +65,11 @@ function A_STAR.findLowestFCostInTable(f_costs, nodes, from, to)
 			lowestPos = node
 		end
 	end
-	return lowestPos, lowestCost
+	local nodesFound = false
+	if lowestCost ~= 1000000 then
+		nodesFound = true
+	end
+	return lowestPos, lowestCost, nodesFound
 end
 
 function A_STAR.retracePath(path, startNode, endNode)
@@ -86,6 +91,7 @@ function A_STAR.convertPathToCordinates(path)
 	return finalPath
 end
 
+--Returns the list of positions to follow for the path, a bool for if the path is found or not 
 function A_STAR.A_Star(tree, collisions, fromGO, toGO)
 	local endNode = A_STAR.findNodeWithID(tree, toGO)
 	local startNode = A_STAR.createTempNode(tree, collisions, fromGO)
@@ -98,10 +104,15 @@ function A_STAR.A_Star(tree, collisions, fromGO, toGO)
 	openNodes[startNode] = startNode
 	local closedNodes = {} --Already checked
 	local parent = {}
+	local nodesFound
 
 	local found = false
 	while not found do
-		local currentNode, currentCost = A_STAR.findLowestFCostInTable(f_costs, openNodes, from, to) --findLowestFCostInTable(self, f_costs, openNodes, from, to)
+		local currentNode, currentCost, nodesFound = A_STAR.findLowestFCostInTable(f_costs, openNodes, from, to) --findLowestFCostInTable(self, f_costs, openNodes, from, to)
+		if not nodesFound then
+			return {}, false
+		end
+
 		openNodes[currentNode] = nil
 
 		closedNodes[currentNode] = currentNode
@@ -109,7 +120,7 @@ function A_STAR.A_Star(tree, collisions, fromGO, toGO)
 			found = true
 			local path = A_STAR.retracePath(parent, startNode, endNode)
 			local positionList = A_STAR.convertPathToCordinates(path)
-			return positionList
+			return positionList, true
 		end
 
 		local neighborsList = currentNode:getLinkedNodeList()

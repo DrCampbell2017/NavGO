@@ -1,4 +1,4 @@
-tile_set: "/main/sampleMap/sampleMap.tilesource"
+tile_set: "/main/standard_NavGo_Demo/sampleMap/sampleMap.tilesource"
 layers {
   id: "layer1"
   z: 0.0
