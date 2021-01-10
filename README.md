@@ -8,6 +8,25 @@ Defold Library. Navigation using A* based on game objects rather than tile maps.
 - Alternatively, require("navGo_pathfinding.NavGO_Global") into a game object and NAVGO.IS_READY() will return true upon being ready.
 4. Utalize path generation and random path generation to allow objects to move throughout your level.
 
+## Directional Paths:
+A secondary type of Node called the "NavGO_directionalNodeGO" can be used for when a specific path needs to be followed. Example patrolling NPCs. To Use:
+1. Add the /NavGO/Handler/NavGO_HandlerGO.go game object reference to the collection you need navigation in.
+2. Add in Navigation nodes from /NavGO/directionalNode/NavGO_directionalNodeGO.go as game object references. Place these around your level in the order you would like your character to move. Within each node, there are three values, 
+- "Node ID" is the number ID for the object
+- "Node Next" is the number ID for the next object in the directional list
+- "Independent path" is a true/false value. True means that it will not be included for use outside of the path. Functions such as "GET_RANDOM_NODE" can not pick these nodes for the path and they will not be used in any other path finding. True means that the node will be used in other path finding.
+3. Send an init message to the NavGO_HandlerGO.go to set values. Upon being ready, it will send back a message_id hash("NavGO_Directional_Ready").
+- Alternatively, require("navGo_pathfinding.NavGO_Global") into a game object and NAVGO.IS_DIRECTIONS_READY() will return true upon being ready.
+4. Utalize path generation using the function "GET_PATH_FROM_DIRECTIONAL_ID".
+
+## Test collections:
+Included within full project (which you can download as a .zip) there are currently two different collections showing various elements of the NavGO. To View a specific example.
+1. Open up the project in Defold
+2. Navigate to the game.project file
+3. In the section "Bootstap" change the value of "Main collection" to one of the following:
+- "standard_NavGo_Demo.collection" (default value) is the main demo space for the NavGo and showcases two moving characters, one character uses the singleton and one messages with the handler. A few seconds into the test, additional characters will spawn with no possible path to show handling that. This collection showcases the primary functions of NavGo.
+- "directional_NavGo_Demo.collection" is the demo for showing off the directional movement. Two characters will follow separate directional paths defined in their movement script. A third character will path find to a randomly picked node that is either on the normal NavGo nodes or the directional nodes where the value of "Independent Path" is set to false.
+
 # NAVGO_HANDLER
 
 ## Messages to the NavGO_HandlerGO
@@ -168,7 +187,7 @@ local nodesNearPosition = NAVGO.GET_NODES_IN_RANGE(centerPosition, range)
 ```
 
 ### NAVGO.GET_NODE_NEAREST_TO_POSITION(position)
-Will return the url of the navigation node that is closest to the center position. This function takes one argument, 'position'. Position is the locaion where you want to measure the nearest node to. 
+Will return the url of the navigation node that is closest to the center position. This function takes one argument, 'position'. Position is the location where you want to measure the nearest node to. 
 
 Will return nothing if the NavGo Handler has not been initialized.
 
@@ -178,6 +197,26 @@ Will return nothing if the NavGo Handler has not been initialized.
 local nearestNode = NAVGO.GET_NODE_NEAREST_TO_POSITION(position)
 ```
 
-*Note* Both NAVGO._FINAL and NAVGO._INIT are private functions and should not be called. 
 
+### NAVGO.IS_DIRECTIONS_READY()
+Will return a true or false flag (boolean) to show if the NavGO directional tree is ready to be used. True = ready to be used. False = not yet initialized.
+*Note Directional nodes must be placed within the level for this function to return true.
+```
+NAVGO.IS_DIRECTIONS_READY()
+```
+
+### NAVGO.GET_PATH_FROM_DIRECTIONAL_ID(start_node_id, end_node_id)
+Will return a list of positional values from one node to another using the directional path trees, meaning it will be one direction. This function takes two arguments, 'start_node_id' and 'end_node_id'. 'start_node_id' is the ID of the node the path will start at. 'end_node_id' is the ID of the node the path will end at. The ID is user defined and exists in the "NavGO_directionalNodeGO" game object.  
+
+Will return two values, path and found. Path is a list of vector three values of the positions for the nodes along the path. Found is a bool variable indicating if the path was successfully generated (returns true) or not (returns false). 
+If the NavGo Handler has not been initialized, path will be an empty table "{}" and found will be "false".
+
+*Note Directional nodes must be placed within the level to use this function. The directional values do not hard enforce the collision rules as defined in the init NavGO_HandlerGO message. A warning will appear if a wall is in the way but will still compile and the path will generate through the wall.
+
+```
+local path, found = NAVGO.GET_PATH_FROM_DIRECTIONAL_ID(start_node_id, end_node_id)
+```
+
+
+*Note* NAVGO._FINAL, NAVGO._INIT, and NAVGO._INIT_DIRECTIONS_PATH are private functions and should not be called. 
 
