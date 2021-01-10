@@ -97,7 +97,7 @@ msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
  ```
 
 ### debug
-  This message will force on debug node to show all nodes on the map as well as the connections between them. If the NavGo handler was not initialized, a warning message with print in the console. 
+  This message will force on debug node to show all nodes on the map as well as the connections between them. If the NavGo handler was not initialized, a warning message with print in the console. Connections between standard NavGo nodes will appear in red, connections between directional nodes will appear in blue.
 ```
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("debug"))
 ```
