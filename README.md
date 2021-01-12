@@ -15,9 +15,10 @@ A secondary type of Node called the "NavGO_directionalNodeGO" can be used for wh
 - "Node ID" is the number ID for the object
 - "Node Next" is the number ID for the next object in the directional list
 - "Independent path" is a true/false value. True means that it will not be included for use outside of the path. Functions such as "GET_RANDOM_NODE" can not pick these nodes for the path and they will not be used in any other path finding. True means that the node will be used in other path finding.
-3. Send an init message to the NavGO_HandlerGO.go to set values. Upon being ready, it will send back a message_id hash("NavGO_Directional_Ready").
+3. Give each directional node an ID for the "Node ID" and the "Node Next" values. This will determine the order of the path that is generated. The path does not have to be in sequential order, you can go from ID 1 to 4, from 4 to 2 and from 2 to 1, see directional_navGo_OutOfOrder file in the project for an example of doing this.
+4. Send an init message to the NavGO_HandlerGO.go to set values. Upon being ready, it will send back a message_id hash("NavGO_Directional_Ready").
 - Alternatively, require("navGo_pathfinding.NavGO_Global") into a game object and NAVGO.IS_DIRECTIONS_READY() will return true upon being ready.
-4. Utalize path generation using the function "GET_PATH_FROM_DIRECTIONAL_ID".
+5. Utalize path generation using the function "GET_PATH_FROM_DIRECTIONAL_ID".
 
 ## Test collections:
 Included within full project (which you can download as a .zip) there are currently two different collections showing various elements of the NavGO. To View a specific example.
