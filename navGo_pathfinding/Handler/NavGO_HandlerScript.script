@@ -46,8 +46,8 @@ end
 
 local function createDirectionalNodeTree(self)
 	-- Link to eachother
-	for i=1, #self.directionalNodes do
-		local currentNode = self.directionalNodes[i]
+	for key, value in pairs(self.directionalNodes) do
+		local currentNode = value
 		local indexSearchingFor = currentNode:getNextID()
 		local next_node = self.directionalNodes[indexSearchingFor]
 		-- brief check
@@ -59,6 +59,7 @@ local function createDirectionalNodeTree(self)
 		--Add to path
 		currentNode:addToLinkedNodesList( next, 1)
 	end
+		
 	NAVGO._INIT_DIRECTIONS_PATH(self.directionalNodes)
 	if self.init_sender ~= nil then
 		msg.post(self.init_sender, "NavGO_Directional_Ready")
@@ -147,9 +148,9 @@ function update(self, dt)
 				msg.post("@render:", "draw_line", { start_point = from, end_point = to, color = vmath.vector4(1,0,0,1) })
 			end
 		end
-		for i=1, #self.directionalNodes do
-			local from = self.directionalNodes[i]:getPosition()
-			local to = self.directionalNodes[self.directionalNodes[i]:getNextID()]:getPosition()
+		for key, value in pairs(self.directionalNodes) do
+			local from = value:getPosition()
+			local to = self.directionalNodes[value:getNextID()]:getPosition()
 			msg.post("@render:", "draw_line", { start_point = from, end_point = to, color = vmath.vector4(0,0,1,1) })
 		end
 	end

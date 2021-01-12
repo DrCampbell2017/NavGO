@@ -1,0 +1,250 @@
+name: "main"
+instances {
+  id: "directionalCharacterGO"
+  prototype: "/main/directional_NavGo_Demo/directional_character/directionalCharacterGO.go"
+  position {
+    x: 145.0
+    y: 251.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "directionalCharacterSingleton"
+    properties {
+      id: "Start_path_ID"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "End_path_ID"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_HandlerGO"
+  prototype: "/navGo_pathfinding/Handler/NavGO_HandlerGO.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_directionalNodeGO"
+  prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
+  position {
+    x: 333.0
+    y: 359.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "NavGo_directionalScript"
+    properties {
+      id: "Node_ID"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "Node_Next"
+      value: "4.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_directionalNodeGO1"
+  prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
+  position {
+    x: 693.0
+    y: 359.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "NavGo_directionalScript"
+    properties {
+      id: "Node_ID"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "Node_Next"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_directionalNodeGO2"
+  prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
+  position {
+    x: 513.0
+    y: 211.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "NavGo_directionalScript"
+    properties {
+      id: "Node_ID"
+      value: "4.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "Node_Next"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/main/main.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"spawnTestCharacters\"\n"
+  "    value: \"false\"\n"
+  "    type: PROPERTY_TYPE_BOOLEAN\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"background\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/main/main.atlas\\\"\\n"
+  "default_animation: \\\"background\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: -1.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"characterSpawnFactory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/main/standard_NavGo_Demo/movingCharacter/movingCharacterGO.go\\\"\\n"
+  "load_dynamically: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"characterSingletonSpawnFactory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/main/standard_NavGo_Demo/movingCharacterSingleton/SingletonCharacterMovement.go\\\"\\n"
+  "load_dynamically: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 640.0
+    y: 360.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
