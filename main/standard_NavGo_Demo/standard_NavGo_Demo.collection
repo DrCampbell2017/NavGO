@@ -364,7 +364,7 @@ embedded_instances {
   id: "go"
   data: "components {\n"
   "  id: \"main\"\n"
-  "  component: \"/main/standard_NavGo_Demo/main.script\"\n"
+  "  component: \"/main/main.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

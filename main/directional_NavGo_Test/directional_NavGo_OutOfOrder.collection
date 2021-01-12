@@ -75,40 +75,7 @@ instances {
     }
     properties {
       id: "Node_Next"
-      value: "4.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_directionalNodeGO1"
-  prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
-  position {
-    x: 693.0
-    y: 359.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  component_properties {
-    id: "NavGo_directionalScript"
-    properties {
-      id: "Node_ID"
-      value: "2.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
-      id: "Node_Next"
-      value: "1.0"
+      value: "4.2"
       type: PROPERTY_TYPE_NUMBER
     }
   }
@@ -136,12 +103,45 @@ instances {
     id: "NavGo_directionalScript"
     properties {
       id: "Node_ID"
-      value: "4.0"
+      value: "4.2"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
       id: "Node_Next"
       value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_directionalNodeGO_End"
+  prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
+  position {
+    x: 693.0
+    y: 359.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "NavGo_directionalScript"
+    properties {
+      id: "Node_ID"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "Node_Next"
+      value: "1.0"
       type: PROPERTY_TYPE_NUMBER
     }
   }
