@@ -11,7 +11,7 @@ function init(self)
 	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("new_directional_node"), message)
 	go.set("#sprite", "scale", vmath.vector3(0, 0, 0))
 	self.nodeName = "#" .. tostring( self.Node_ID )
-	label.set_text("#IdNumber", self.nodeName)
+	label.set_text("#IdNumber", "")
 end
 
 function on_message(self, message_id, message, sender)

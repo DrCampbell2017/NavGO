@@ -71,7 +71,7 @@ embedded_components {
   "pivot: PIVOT_CENTER\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   "line_break: false\n"
-  "text: \"#\"\n"
+  "text: \"#1\"\n"
   "font: \"/navGo_pathfinding/NavGOAssets/24-point-font.font\"\n"
   "material: \"/builtins/fonts/label.material\"\n"
   ""

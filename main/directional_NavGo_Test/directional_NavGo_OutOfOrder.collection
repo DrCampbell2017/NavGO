@@ -23,8 +23,8 @@ instances {
   id: "NavGO_directionalNodeGO"
   prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
   position {
-    x: 330.0
-    y: 360.0
+    x: 322.0
+    y: 411.0
     z: 0.0
   }
   rotation {
@@ -42,73 +42,7 @@ instances {
     }
     properties {
       id: "Node_Next"
-      value: "4.2"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_directionalNodeGO2"
-  prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
-  position {
-    x: 639.0
-    y: 211.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  component_properties {
-    id: "NavGo_directionalScript"
-    properties {
-      id: "Node_ID"
-      value: "4.2"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
-      id: "Node_Next"
-      value: "2.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_directionalNodeGO_End"
-  prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
-  position {
-    x: 980.0
-    y: 359.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  component_properties {
-    id: "NavGo_directionalScript"
-    properties {
-      id: "Node_ID"
-      value: "2.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
-      id: "Node_Next"
-      value: "1.0"
+      value: "4.0"
       type: PROPERTY_TYPE_NUMBER
     }
   }
@@ -234,6 +168,244 @@ embedded_instances {
   position {
     x: 640.0
     y: 360.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "go1"
+  data: "components {\n"
+  "  id: \"NavGo_directionalScript\"\n"
+  "  component: \"/navGo_pathfinding/directionalNode/NavGo_directionalScript.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"Node_ID\"\n"
+  "    value: \"2.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"Node_Next\"\n"
+  "    value: \"1.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"IdNumber\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 64.0\\n"
+  "  y: 64.0\\n"
+  "  z: 0.0\\n"
+  "  w: 0.0\\n"
+  "}\\n"
+  "scale {\\n"
+  "  x: 1.0\\n"
+  "  y: 1.0\\n"
+  "  z: 1.0\\n"
+  "  w: 0.0\\n"
+  "}\\n"
+  "color {\\n"
+  "  x: 0.0\\n"
+  "  y: 0.0\\n"
+  "  z: 0.0\\n"
+  "  w: 1.0\\n"
+  "}\\n"
+  "outline {\\n"
+  "  x: 0.0\\n"
+  "  y: 0.0\\n"
+  "  z: 0.0\\n"
+  "  w: 1.0\\n"
+  "}\\n"
+  "shadow {\\n"
+  "  x: 0.0\\n"
+  "  y: 0.0\\n"
+  "  z: 0.0\\n"
+  "  w: 1.0\\n"
+  "}\\n"
+  "leading: 1.0\\n"
+  "tracking: 0.0\\n"
+  "pivot: PIVOT_CENTER\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "line_break: false\\n"
+  "text: \\\"#2\\\"\\n"
+  "font: \\\"/navGo_pathfinding/NavGOAssets/24-point-font.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.1\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/navGo_pathfinding/navGOAtlas.atlas\\\"\\n"
+  "default_animation: \\\"directional_node\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 683.0
+    y: 326.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "go2"
+  data: "components {\n"
+  "  id: \"NavGo_directionalScript\"\n"
+  "  component: \"/navGo_pathfinding/directionalNode/NavGo_directionalScript.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"Node_ID\"\n"
+  "    value: \"4.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"Node_Next\"\n"
+  "    value: \"2.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"IdNumber\"\n"
+  "  type: \"label\"\n"
+  "  data: \"size {\\n"
+  "  x: 64.0\\n"
+  "  y: 64.0\\n"
+  "  z: 0.0\\n"
+  "  w: 0.0\\n"
+  "}\\n"
+  "scale {\\n"
+  "  x: 1.0\\n"
+  "  y: 1.0\\n"
+  "  z: 1.0\\n"
+  "  w: 0.0\\n"
+  "}\\n"
+  "color {\\n"
+  "  x: 0.0\\n"
+  "  y: 0.0\\n"
+  "  z: 0.0\\n"
+  "  w: 1.0\\n"
+  "}\\n"
+  "outline {\\n"
+  "  x: 0.0\\n"
+  "  y: 0.0\\n"
+  "  z: 0.0\\n"
+  "  w: 1.0\\n"
+  "}\\n"
+  "shadow {\\n"
+  "  x: 0.0\\n"
+  "  y: 0.0\\n"
+  "  z: 0.0\\n"
+  "  w: 1.0\\n"
+  "}\\n"
+  "leading: 1.0\\n"
+  "tracking: 0.0\\n"
+  "pivot: PIVOT_CENTER\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "line_break: false\\n"
+  "text: \\\"#4\\\"\\n"
+  "font: \\\"/navGo_pathfinding/NavGOAssets/24-point-font.font\\\"\\n"
+  "material: \\\"/builtins/fonts/label.material\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.1\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/navGo_pathfinding/navGOAtlas.atlas\\\"\\n"
+  "default_animation: \\\"directional_node\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 501.0
+    y: 198.0
     z: 0.0
   }
   rotation {

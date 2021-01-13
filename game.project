@@ -2,7 +2,7 @@
 title = NavGO
 
 [bootstrap]
-main_collection = /main/directional_NavGo_Demo/directional_NavGo_Demo.collectionc
+main_collection = /main/directional_NavGo_Test/directional_NavGo_OutOfOrder.collectionc
 render = /builtins/render/default.renderc
 
 [input]
