@@ -10,14 +10,19 @@ function init(self)
 	message.Independent_path = self.Independent_path
 	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("new_directional_node"), message)
 	go.set("#sprite", "scale", vmath.vector3(0, 0, 0))
+	self.nodeName = "#" .. tostring( self.Node_ID )
+	label.set_text("#IdNumber", self.nodeName)
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("debug") then
 		go.set("#sprite", "scale", vmath.vector3(1, 1, 1))
+		label.set_text("#IdNumber", self.nodeName)
 	elseif message_id == hash("hide") then
 		go.set("#sprite", "scale", vmath.vector3(0, 0, 0))
+		label.set_text("#IdNumber", "")
 	elseif message_id == hash("destory") then
 		msg.post(go.get_id(), "disable")
+		label.set_text("#IdNumber", "")
 	end
 end

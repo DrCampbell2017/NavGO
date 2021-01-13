@@ -1,0 +1,46 @@
+require("navGo_pathfinding.NavGO_Global")
+
+go.property("Start_path_ID", -1)
+go.property("End_path_ID", -1)
+go.property("speed", 400)
+
+local function distance(vec1, vec2)
+	return math.ceil( math.sqrt( math.pow(vec1.x - vec2.x, 2) + math.pow(vec1.y - vec2.y, 2) ) )
+end
+
+local function moveCharacter(self)
+	local path, found = NAVGO.GET_PATH_FROM_DIRECTIONAL_ID(self.Start_path_ID, self.End_path_ID)
+	if not found then
+		print("Directional - NO PATH FOUND")
+	else
+		print("Directional - PATH FOUND")
+		local delay = 0
+		local lastPos = go.get_position(go.get_id())
+		
+		for i=1, #path do
+			local newPosition = vmath.vector3(path[i].x, path[i].y, 1)
+			local time = distance(newPosition, lastPos) / self.speed -- move at a consistend speed
+			go.animate(go.get_id(), "position", go.PLAYBACK_ONCE_FORWARD, newPosition, go.EASING_LINEAR, time, delay)
+			lastPos = newPosition
+			delay = delay + time
+		end
+	end
+end
+
+
+------------------
+--Core functions--
+------------------
+
+function init(self)
+	timer.delay(1, false, moveCharacter)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("contact_point_response") then
+		if message.group == hash("wall") then
+			local newpos = go.get_position() + message.normal * message.distance
+			go.set_position(newpos)
+		end
+	end
+end

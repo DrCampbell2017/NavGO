@@ -1,38 +1,5 @@
 name: "main"
 instances {
-  id: "directionalCharacterGO"
-  prototype: "/main/directional_NavGo_Demo/directional_character/directionalCharacterGO.go"
-  position {
-    x: 145.0
-    y: 251.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  component_properties {
-    id: "directionalCharacterSingleton"
-    properties {
-      id: "Start_path_ID"
-      value: "1.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
-      id: "End_path_ID"
-      value: "2.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
   id: "NavGO_HandlerGO"
   prototype: "/navGo_pathfinding/Handler/NavGO_HandlerGO.go"
   position {
@@ -56,8 +23,8 @@ instances {
   id: "NavGO_directionalNodeGO"
   prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
   position {
-    x: 333.0
-    y: 359.0
+    x: 330.0
+    y: 360.0
     z: 0.0
   }
   rotation {
@@ -89,7 +56,7 @@ instances {
   id: "NavGO_directionalNodeGO2"
   prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
   position {
-    x: 513.0
+    x: 639.0
     y: 211.0
     z: 0.0
   }
@@ -122,7 +89,7 @@ instances {
   id: "NavGO_directionalNodeGO_End"
   prototype: "/navGo_pathfinding/directionalNode/NavGO_directionalNodeGO.go"
   position {
-    x: 693.0
+    x: 980.0
     y: 359.0
     z: 0.0
   }
@@ -174,6 +141,21 @@ embedded_instances {
   "    type: PROPERTY_TYPE_BOOLEAN\n"
   "  }\n"
   "}\n"
+  "components {\n"
+  "  id: \"spawnCharacterScript\"\n"
+  "  component: \"/main/directional_NavGo_Test/spawnCharacterScript.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
   "embedded_components {\n"
   "  id: \"background\"\n"
   "  type: \"sprite\"\n"
@@ -216,6 +198,24 @@ embedded_instances {
   "  id: \"characterSingletonSpawnFactory\"\n"
   "  type: \"factory\"\n"
   "  data: \"prototype: \\\"/main/standard_NavGo_Demo/movingCharacterSingleton/SingletonCharacterMovement.go\\\"\\n"
+  "load_dynamically: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"characterFactory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/main/directional_NavGo_Test/spawn_character/oneTimeDirectionalCharacterGO.go\\\"\\n"
   "load_dynamically: false\\n"
   "\"\n"
   "  position {\n"
