@@ -1,6 +1,6 @@
 local function spawnEnemy(self)
 	local url = "/go#characterFactory"
-	local position = vmath.vector3(330, 360, 0) -- position where character spawns
+	local position = vmath.vector3(253, 455, 0) -- position where character spawns
 	local rotation = vmath.quat_rotation_z(0) --quat angle the character spawns at
 	local properties = { Start_path_ID = 1, End_path_ID = 2, speed = 400 } -- table of values to send to object
 	local scale = vmath.vector3(1, 1, 1) -- scale to spawn at
