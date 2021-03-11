@@ -1,0 +1,9 @@
+go.property("time", 3)
+
+require("navGo_pathfinding.NavGO_Global")
+
+function init(self)
+	timer.delay(self.time, false, function(self)
+		msg.post(go.get_id(), hash("remove_node"))
+	end)
+end

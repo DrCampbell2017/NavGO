@@ -108,6 +108,20 @@ function NAVGO.GET_NODE_NEAREST_TO_POSITION(position)
 	end
 end
 
+function NAVGO.REMOVE_NODE(myUrl)
+	for i=1, #NAVGO.NODE_TREE do
+		if NAVGO.NODE_TREE[i]:isObjectID(myUrl) then
+			local connections = NAVGO.NODE_TREE[i]:getLinkedNodeList()
+			for key, value in pairs(connections) do
+				key:removeNodeFromLinkedList(NAVGO.NODE_TREE[i])
+			end
+			-- Successful removal
+			table.remove(NAVGO.NODE_TREE, i)
+			break
+		end
+	end
+end
+
 function NAVGO._FINAL()
 	NAVGO.NODE_TREE = {}
 	NAVGO.DIRECTIONS_TREE = {}

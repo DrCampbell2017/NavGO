@@ -1,11 +1,13 @@
+--[[
+Note: This form of character movement is not recommended due to the fact nodes are cashed.
+Removing or adding in nodes will not be regestered and the table must be recalculated every time.
+]]
+
 local function InitMoveCharacter(self)
-	--Go to node go.get_id("/NavGO_NodeGO1")
-	--msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path"), {target = go.get_id("/NavGO_NodeGO1")})
 	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("generate_path_to_random_node"), {target = go.get_id("/NavGO_NodeGO1")})
 end
 
 local function move2(self)
-	--msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_random_node"))
 	if #self.nodesList == 0 then
 		msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("return_all_nodes"))
 	else

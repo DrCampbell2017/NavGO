@@ -1,14 +1,14 @@
 function init(self)
 	--Let Handler know I exist
 	msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("new_node"))
-	go.set("#sprite", "scale", vmath.vector3(0, 0, 0))
+	go.set_scale(vmath.vector3(0.001, 0.001, 0.001), go.get_id())
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("debug") then
-		go.set("#sprite", "scale", vmath.vector3(1, 1, 1))
+		go.set_scale(vmath.vector3(1, 1, 1), go.get_id())
 	elseif message_id == hash("hide") then
-		go.set("#sprite", "scale", vmath.vector3(0, 0, 0))
+		go.set_scale(vmath.vector3(0.001, 0.001, 0.001), go.get_id())
 	elseif message_id == hash("destory") then
 		msg.post(go.get_id(), "disable")
 	elseif message_id == hash("remove_node") then

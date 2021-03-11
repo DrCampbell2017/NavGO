@@ -27,7 +27,7 @@ function init(self)
 
 	local message = {}
 	message.collisions = { hash("wall") }
-	message.debug = false
+	message.debug = true
 	message.deleteNodeAfterGotten = true
 	message.nodeNeighborRange = 400
 	message.nodeNeighborRange = 400

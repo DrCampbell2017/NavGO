@@ -114,6 +114,15 @@ local function new_directional_node(self, message, sender)
 	end
 end
 
+-----------------
+-- Remove Node --
+-----------------
+
+local function remove_node(self, sender)
+	NAVGO.REMOVE_NODE(sender)
+	self.nodes = NAVGO.NODE_TREE
+end
+
 ------------------
 --Core Functions--
 ------------------
@@ -140,6 +149,7 @@ end
 
 function update(self, dt)
 	if self.nodePathsFound and self.debug and self.active then
+		self.nodes = NAVGO.NODE_TREE
 		for i=1, #self.nodes do
 			local innerList = self.nodes[i]:getLinkedNodeList()
 			local from = self.nodes[i]:getPosition()
@@ -159,12 +169,16 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("new_node") then
 		new_node(self, message, sender)
+
+	elseif message_id == hash("remove_node") then
+		remove_node(self, sender)
 		
 	elseif message_id == hash("new_directional_node") then
 		new_directional_node(self, message, sender)
 		
 	elseif message_id == hash("return_all_nodes") then
 		if self.active then
+			self.nodes = NAVGO.NODE_TREE
 			local nodes = {}
 			for i=1, #self.nodes do
 				local url = self.nodes[i]:getObjID()
@@ -188,6 +202,7 @@ function on_message(self, message_id, message, sender)
 		end
 	elseif message_id == hash("return_random_node") then
 		if self.active then
+			self.nodes = NAVGO.NODE_TREE
 			local randomNode = self.nodes[math.random(1, #self.nodes)]
 			local randomURL = randomNode:getObjID()
 			msg.post(sender, hash("random_node"), { node = randomURL } )
@@ -198,6 +213,7 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("generate_path") then
 		--Check if to point exists on path
 		if self.active then
+			self.nodes = NAVGO.NODE_TREE
 			local exists = A_STAR.findNodeWithID(self.nodes, message.target)
 			assert(exists, "ERROR: Target node must exist on the path.")
 			--Do Path
@@ -219,6 +235,7 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("generate_path_to_random_node") then
 		if self.active then
 			--Do Path
+			self.nodes = NAVGO.NODE_TREE
 			local fromGO = sender
 			local senderPosition = go.get_position(sender)
 			local to = self.nodes[math.random(1,#self.nodes)]:getObjID()
@@ -236,6 +253,7 @@ function on_message(self, message_id, message, sender)
 		
 	elseif message_id == hash("debug") then
 		if self.active then
+			self.nodes = NAVGO.NODE_TREE
 			self.debug = true
 			for i=1, #self.nodes do
 				local id = self.nodes[i]:getObjID()
@@ -331,6 +349,7 @@ function on_message(self, message_id, message, sender)
 			
 	elseif message_id == hash("redraw_path") then
 		if self.active then
+			self.nodes = NAVGO.NODE_TREE
 			if self.deleteAfterGotten then
 				for i=1, #self.nodes do
 					local id = self.nodes[i]:getObjID()

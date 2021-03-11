@@ -26,6 +26,18 @@ navNode = {
 		self.linkedNodes[value] = distance
 	end,
 
+	getAmountInLinkedList = function(self)
+		local amount = 0
+		for k, v in pairs(self.linkedNodes) do
+			amount = amount + 1
+		end
+		return amount
+	end,
+
+	removeNodeFromLinkedList = function(self, value)
+		self.linkedNodes[value] = nil
+	end,
+
 	getLinkedNodeList = function(self)
 		return self.linkedNodes
 	end,
