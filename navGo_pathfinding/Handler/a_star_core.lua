@@ -40,9 +40,10 @@ function A_STAR.createTempNode(tree, collisions, fromGO)
 		end
 	end
 	if not foundConnection then
-		error("No paths exists, you need to add nodes to support this.")
+		print("No paths exists, you need to add nodes to support this.")
+		return nil, false
 	end
-	return newNode
+	return newNode, true
 end
 
 function A_STAR.calculateCost(current, from, to)
@@ -94,7 +95,11 @@ end
 --Returns the list of positions to follow for the path, a bool for if the path is found or not 
 function A_STAR.A_Star(tree, collisions, fromGO, toGO)
 	local endNode = A_STAR.findNodeWithID(tree, toGO)
-	local startNode = A_STAR.createTempNode(tree, collisions, fromGO)
+	local startNode, exists = A_STAR.createTempNode(tree, collisions, fromGO)
+	if exists == false then
+		-- no path possible
+		return {}, false
+	end
 	--table.insert(self.nodes, startNode)
 	local from = startNode:getPosition()
 	local to = endNode:getPosition()
