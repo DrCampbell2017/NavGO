@@ -447,6 +447,16 @@ function on_message(self, message_id, message, sender)
 		else
 			print("WARNING: " .. tostring( sender ) .. " attempted to call a function in the NavGO handler before initializing the handler.")
 		end
+
+	elseif message_id == hash("set_number_of_rays") then
+		assert(message.numberOfRays ~= nil, "ERROR: message.numberOfRays must be provided by " .. tostring( sender ))
+		self.numberOfRays = message.numberOfRays
+		NAVGO.SET_NUMBER_OF_RAYS(self.numberOfRays)
+
+	elseif message_id == hash("set_distance_between_rays") then
+		assert(message.raduis ~= nil, "ERROR: message.raduis must be provided by " .. tostring( sender ))
+		self.rayRadius = message.raduis
+		NAVGO.SET_DISTANCE_BETWEEN_RAYS(self.rayRadius)
 	end
 end
 
