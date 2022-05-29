@@ -27,6 +27,8 @@ Included within full project (which you can download as a .zip) there are curren
 3. In the section "Bootstap" change the value of "Main collection" to one of the following:
 - "standard_NavGo_Demo.collection" (default value) is the main demo space for the NavGo and showcases two moving characters, one character uses the singleton and one messages with the handler. A few seconds into the test, additional characters will spawn with no possible path to show handling that. This collection showcases the primary functions of NavGo.
 - "directional_NavGo_Demo.collection" is the demo for showing off the directional movement. Two characters will follow separate directional paths defined in their movement script. A third character will path find to a randomly picked node that is either on the normal NavGo nodes or the directional nodes where the value of "Independent Path" is set to false.
+- "multitaycast_NavGo_Demo.collection" is the demo for showing multiple raycast support. One character will follow a generated path with 3 rays connecting the nodes instead of just one ray. This insures greater accuracy when generating the map.
+- "multitaycast_NavGo_directional_Demo.collection" is the demo showing that multiple raycast will work cleanly with the directional nodes. Three characters will move around the map. The first will move from directional points 1-8. The second will move from directional points 9-12. The third will explore the full map including directional points 1-8 but not directional points 9-12 as they have been excluded.
 
 # NAVGO_HANDLER
 
@@ -41,6 +43,8 @@ message.collisions = { hash("wall") } --<1>
 message.debug = false --<2>
 message.deleteNodeAfterGotten = false --<3>
 message.nodeNeighborRange = 500 --<4>
+message.numberOfRays = 3 --<5> (Optional)
+message.raduis = 32 -- <6> (Optional)
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("init"), message)
   ```
 Values:
@@ -52,6 +56,10 @@ Values:
 <3.> message.deleteNodeAfterGotten can be true or false/nil. When true, will hide and disable all nodes on the map. This should help with efficiency as opposed to the default implementation which simple shrinks the sprite to vmath.vector3(0,0,0)
 
 <4.> message.nodeNeighborRange is a number value, can be nil. This is the range that nodes will search for each other within. 500 by default.
+
+<5.> message.numberOfRay is an intiger value between 1 and 3. If nil the navGo will assume the value is 1. If less then 1 then the navGo will assume it is 1. If greater then 3 then the system will assume it is 3. Any other value with (including those with a decimal point) will be treated as a 3. This value will be used to determine how many rays will connect each of the nodes. 1 is the normal approach with rays being cast from the center of one node to the center of another. 2 is the wide approach where a ray will be cast from the sides of the node to the sides of another (based upon distance provided by message.raduis). 3 is the combination approach with a ray from the center and the sides of the node.    
+
+<6.> message.raduis is a number value. If nil then the navGo will assume the value to be 32. If message.numberOfRay is nil then this variable will be ignored. This value will be used to determine the radius from the center of the node to the side when doing 2 or 3 raycasts.
 
 ### New Node
   This message is used for adding new nodes to the list. When the first node is added, there is a .05 second delay before the algorithm runs to create the map. This function is utilized by the built-in NavGO nodes.
@@ -109,7 +117,20 @@ msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("debug"))
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("redraw_path"))
 ```
 
-### final 
+### Set number of rays
+   This message will change the "number of rays" value within the system. When changed, this value will be used when new nodes are added, when the path is redrawn, or when debug mode is active to show all current connections in the navGo. This message will also preform a call to NAVGO.SET_NUMBER_OF_RAYS and will override any value there.
+```
+msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("set_number_of_rays"), { numberOfRays = [put new number of rays value here] }
+```
+
+### Set Distance Between Rays
+   This message will change the "distance between rays" value within the system. When changed, this value will be used when new nodes are added, when the path is redrawn, or when debug mode is active to show all current connections in the navGo. This message will also preform a call to NAVGO.SET_DISTANCE_BETWEEN_RAYS and will override any value there.
+```
+msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("set_distance_between_rays"), { raduis = [put new distance value here] })
+```
+
+
+### Final 
   This message will cause the NavGo to reset to a default state. Must be re-initialized before it can be used again.
 ```
 msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("final"))
@@ -216,6 +237,32 @@ If the NavGo Handler has not been initialized, path will be an empty table "{}" 
 
 ```
 local path, found = NAVGO.GET_PATH_FROM_DIRECTIONAL_ID(start_node_id, end_node_id)
+```
+
+### NAVGO.SET_NUMBER_OF_RAYS(numbOfRays)
+Will set the 'number of rays' value within the navGo. This call alone will not recalculate the path and will only be used internally when checking for a path to an existing node. This function call will not change the value in the navGo handler.
+```
+NAVGO.SET_NUMBER_OF_RAYS(numbOfRays)
+```
+
+This function call alone not automatically recalculate the path, if you need to change the number of nodes when you recalculate a path, message the navGo handler directly thenfollow it with a message to redraw the path otherwise the value will only be used for new nodes / debug purposes and will not effect the current navGo.
+
+```
+msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("set_number_of_rays"), { numberOfRays = [put new number of rays value here] })
+msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("redraw_path"))
+```
+
+### NAVGO.SET_DISTANCE_BETWEEN_RAYS(distance)
+Will set the 'distance between rays' value within the navGo. This will not on it's own recalculate the path and will only be used internally when checking for a path to an existing node and when 'number of rays' is set to 2 or 3. This function call will not change the value in the navGo handler.
+```
+NAVGO.SET_DISTANCE_BETWEEN_RAYS(distance)
+```
+
+This function call alone not automatically recalculate the path, if you need to change the distance between rays when you recalculate a path, message the navGo handler directly then follow it with a message to redraw the path otherwise the value will only be used for new nodes / debug purposes and will not effect the current navGo. 
+
+```
+msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("set_distance_between_rays"), { raduis = [put new distance value here] })
+msg.post("/NavGO_HandlerGO#NavGO_HandlerScript", hash("redraw_path"))
 ```
 
 
