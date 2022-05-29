@@ -1,4 +1,4 @@
-name: "main"
+name: "multicast"
 instances {
   id: "NavGO_HandlerGO"
   prototype: "/navGo_pathfinding/Handler/NavGO_HandlerGO.go"
@@ -20,31 +20,11 @@ instances {
   }
 }
 instances {
-  id: "movingCharacterGO"
-  prototype: "/main/standard_NavGo_Demo/movingCharacter/movingCharacterGO.go"
-  position {
-    x: 1173.0
-    y: 331.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
   id: "NavGO_NodeGO"
   prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
   position {
-    x: 519.0
-    y: 483.0
+    x: 533.0
+    y: 513.0
     z: 0.0
   }
   rotation {
@@ -63,208 +43,8 @@ instances {
   id: "NavGO_NodeGO1"
   prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
   position {
-    x: 1028.0
-    y: 40.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO2"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 1030.0
-    y: 170.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO3"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 1169.0
-    y: 478.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO4"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 819.0
-    y: 675.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO5"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 575.0
-    y: 250.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO6"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 63.0
-    y: 71.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO7"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 575.0
-    y: 44.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO8"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 275.0
-    y: 71.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO9"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 273.0
-    y: 250.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO11"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 515.0
-    y: 671.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "NavGO_NodeGO12"
-  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
-  position {
-    x: 813.0
-    y: 482.0
+    x: 808.0
+    y: 513.0
     z: 0.0
   }
   rotation {
@@ -300,11 +80,11 @@ instances {
   }
 }
 instances {
-  id: "NavGO_NodeGO10"
+  id: "NavGO_NodeGO2"
   prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
   position {
-    x: 1177.0
-    y: 673.0
+    x: 808.0
+    y: 298.0
     z: 0.0
   }
   rotation {
@@ -320,11 +100,151 @@ instances {
   }
 }
 instances {
-  id: "NavGO_NodeGO13"
+  id: "NavGO_NodeGO3"
   prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
   position {
-    x: 1168.0
-    y: 175.0
+    x: 1058.0
+    y: 48.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO4"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
+  position {
+    x: 808.0
+    y: 70.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO5"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
+  position {
+    x: 531.0
+    y: 70.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO6"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
+  position {
+    x: 256.0
+    y: 70.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO7"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
+  position {
+    x: 123.0
+    y: 278.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO8"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
+  position {
+    x: 60.0
+    y: 70.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO9"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
+  position {
+    x: 124.0
+    y: 489.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "NavGO_NodeGO10"
+  prototype: "/navGo_pathfinding/Node/NavGO_NodeGO.go"
+  position {
+    x: 324.0
+    y: 555.0
     z: 0.0
   }
   rotation {
@@ -343,8 +263,8 @@ scale_along_z: 0
 embedded_instances {
   id: "go"
   data: "components {\n"
-  "  id: \"main\"\n"
-  "  component: \"/main/main.script\"\n"
+  "  id: \"multiraycastScript\"\n"
+  "  component: \"/main/multiraycast_NavGo_Demo/multiraycastScript.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -432,68 +352,6 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "map"
-  data: "components {\n"
-  "  id: \"block\"\n"
-  "  component: \"/main/standard_NavGo_Demo/sampleMap/block.tilemap\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"collisionobject\"\n"
-  "  type: \"collisionobject\"\n"
-  "  data: \"collision_shape: \\\"/main/standard_NavGo_Demo/sampleMap/block.tilemap\\\"\\n"
-  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
-  "mass: 0.0\\n"
-  "friction: 0.1\\n"
-  "restitution: 0.5\\n"
-  "group: \\\"wall\\\"\\n"
-  "mask: \\\"player\\\"\\n"
-  "linear_damping: 0.0\\n"
-  "angular_damping: 0.0\\n"
-  "locked_rotation: false\\n"
-  "bullet: false\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
-    x: 923.0
-    y: 235.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
   id: "map1"
   data: "components {\n"
   "  id: \"block\"\n"
@@ -539,8 +397,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 325.0
-    y: -1.0
+    x: 373.0
+    y: 208.0
     z: 0.0
   }
   rotation {
@@ -663,8 +521,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 725.0
-    y: 83.0
+    x: 572.0
+    y: 305.0
     z: 0.0
   }
   rotation {
@@ -725,8 +583,140 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 93.0
-    y: 423.0
+    x: 1033.0
+    y: 278.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "NavGo_Custom"
+  data: "components {\n"
+  "  id: \"removeNodeAfterTime\"\n"
+  "  component: \"/main/script/removeNodeAfterTime.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"NavGO_NodeCustom\"\n"
+  "  component: \"/main/script/NavGO_NodeCustom.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/navGo_pathfinding/navGOAtlas.atlas\\\"\\n"
+  "default_animation: \\\"node\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1045.0
+    y: 640.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"block\"\n"
+  "  component: \"/main/standard_NavGo_Demo/sampleMap/block.tilemap\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/main/standard_NavGo_Demo/sampleMap/block.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"wall\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "linear_damping: 0.0\\n"
+  "angular_damping: 0.0\\n"
+  "locked_rotation: false\\n"
+  "bullet: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 572.0
+    y: 105.0
     z: 0.0
   }
   rotation {
@@ -787,8 +777,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 926.0
-    y: 521.0
+    x: 174.0
+    y: 208.0
     z: 0.0
   }
   rotation {
@@ -804,23 +794,8 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "NavGo_Custom"
+  id: "NavGo_Custom1"
   data: "components {\n"
-  "  id: \"removeNodeAfterTime\"\n"
-  "  component: \"/main/script/removeNodeAfterTime.script\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "components {\n"
   "  id: \"NavGO_NodeCustom\"\n"
   "  component: \"/main/script/NavGO_NodeCustom.script\"\n"
   "  position {\n"
@@ -835,10 +810,45 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
+  "components {\n"
+  "  id: \"removeNodeAfterTime\"\n"
+  "  component: \"/main/script/removeNodeAfterTime.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/navGo_pathfinding/navGOAtlas.atlas\\\"\\n"
+  "default_animation: \\\"node\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
   ""
   position {
-    x: 669.0
-    y: 382.0
+    x: 192.0
+    y: 640.0
     z: 0.0
   }
   rotation {

@@ -11,6 +11,8 @@ NAVGO.COLLISIONS = {}
 NAVGO.READY_TO_USE = false
 NAVGO.DIRECTIONS_READY = false
 NAVGO.DIRECTIONS_TREE = {}
+NAVGO.NUMBER_OF_RAYS = 1
+NAVGO.DISTANCE_BETWEEN_RAYS = 32
 
 function NAVGO._INIT(tree, collisions)
 	NAVGO.NODE_TREE = tree
@@ -20,6 +22,14 @@ end
 
 function NAVGO.IS_READY()
 	return NAVGO.READY_TO_USE
+end
+
+function NAVGO.SET_NUMBER_OF_RAYS(numbOfRays)
+	NAVGO.NUMBER_OF_RAYS = numbOfRays
+end
+
+function NAVGO.SET_DISTANCE_BETWEEN_RAYS(distance)
+	NAVGO.DISTANCE_BETWEEN_RAYS = distance
 end
 
 function NAVGO.RETURN_ALL_NODES()
@@ -55,7 +65,7 @@ function NAVGO.GENERATE_PATH(targetURL, myURL)
 		assert(exists, "ERROR: Target node must exist on the path.")
 		local fromGO = myURL
 		local toGO = targetURL
-		local path, found = A_STAR.A_Star(NAVGO.NODE_TREE, NAVGO.COLLISIONS, fromGO, toGO)
+		local path, found = A_STAR.A_Star(NAVGO.NODE_TREE, NAVGO.COLLISIONS, fromGO, toGO, NAVGO.NUMBER_OF_RAYS, NAVGO.DISTANCE_BETWEEN_RAYS)
 		return path, found
 	else
 		print("WARNING: NavGO is not yet ready to be used.")
@@ -67,7 +77,7 @@ function NAVGO.GENERATE_PATH_TO_RANDOM_NODE(myUrl)
 		local fromGO = myUrl
 		local senderPosition = go.get_position(myUrl)
 		local toGO = NAVGO.NODE_TREE[math.random(1,#NAVGO.NODE_TREE)]:getObjID()
-		local path, found = A_STAR.A_Star(NAVGO.NODE_TREE, NAVGO.COLLISIONS, fromGO, toGO)
+		local path, found = A_STAR.A_Star(NAVGO.NODE_TREE, NAVGO.COLLISIONS, fromGO, toGO, NAVGO.NUMBER_OF_RAYS, NAVGO.DISTANCE_BETWEEN_RAYS)
 		return path, found
 	else
 		print("WARNING: NavGO is not yet ready to use")

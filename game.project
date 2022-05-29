@@ -2,7 +2,7 @@
 title = NavGO
 
 [bootstrap]
-main_collection = /main/standard_NavGo_Demo/standard_NavGo_Demo.collectionc
+main_collection = /main/multiraycast_NavGo_Demo/withDirection/multitaycast_NavGo_directional_Demo.collectionc
 render = /builtins/render/default.renderc
 
 [input]

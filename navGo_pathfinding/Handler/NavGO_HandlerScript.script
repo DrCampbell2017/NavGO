@@ -1,3 +1,4 @@
+require("navGo_pathfinding.multiRayCast")
 require("navGo_pathfinding.Handler.a_star_core")
 require("navGo_pathfinding.NavGO_Global")
 require("navGo_pathfinding.Node.nodeModule")
@@ -7,41 +8,55 @@ local function distance(vec1, vec2)
 	return math.ceil( math.sqrt( math.pow(vec1.x - vec2.x, 2) + math.pow(vec1.y - vec2.y, 2) ) )
 end
 
-local function createNodeTree(self)
-	--Show distance between all nodes
-	for i=1, #self.nodes do
-		local from = self.nodes[i]:getPosition()
-		local foundConnection = false
-		for k=i + 1, #self.nodes do
-			if not self.nodes[i]:inLinkedNodesList(self.nodes[k]) then
-				local to = self.nodes[k]:getPosition()
-				local distance = distance(from, to)
-				if distance <= self.valueRange then
-					--Do Raycast to see if hits anything
-					local result
-					if from ~= to then
-						result = physics.raycast(from, to, self.collisions, false)
-					end
-					if result == nil then
-						--Does not hit! Is good to add
-						self.nodes[i]:addToLinkedNodesList(self.nodes[k], distance)
-						self.nodes[k]:addToLinkedNodesList(self.nodes[i], distance)
-						foundConnection = true
-					end
+local function createNodeForTree(self, node, from, i)
+	if i == nil then i = 1 end
+	local foundConnection = false
+	for k=i + 1, #self.nodes do
+		if not node:inLinkedNodesList(self.nodes[k]) then
+			local to = self.nodes[k]:getPosition()
+			local distance = distance(from, to)
+			if distance <= self.valueRange then
+				--Do Raycast to see if hits anything
+				local result
+				if from ~= to then
+					result = navgo_multiRayCast.determineIfValidConnection(from, to, self.collisions, self.numberOfRays, self.rayRadius)
+				end
+				if result == nil then
+					--Does not hit! Is good to add
+					node:addToLinkedNodesList(self.nodes[k], distance)
+					self.nodes[k]:addToLinkedNodesList(node, distance)
+					foundConnection = true
 				end
 			end
 		end
-		if not foundConnection then
-			if not self.nodes[i]:hasConnectedNodes() then
-				print("WARNING: NODE " .. tostring(self.nodes[i]:getObjID()) .. " does not have any connections within range." )
-			end
+	end
+	if not foundConnection then
+		if not node:hasConnectedNodes() then
+			print("WARNING: NODE " .. tostring(node:getObjID()) .. " does not have any connections within range." )
 		end
 	end
+	return foundConnection
+end
+
+local function createNodeTree(self)
+	--Show distance between all nodes
+	for i=1, #self.nodes do
+		local node = self.nodes[i]
+		local from = self.nodes[i]:getPosition()
+		createNodeForTree(self, node, from, i)
+	end
+	-- post build tree handling
 	self.nodePathsFound = true
 	NAVGO._INIT(self.nodes, self.collisions)
 	if self.init_sender ~= nil then
 		msg.post(self.init_sender, "NavGO_Ready")
 	end
+	self.pathBuilt = true
+end
+
+local function addLateNodeToTable(self, newNode, position)
+	createNodeForTree(self, newNode, position, 1)
+	table.insert(self.nodes, newNode)
 end
 
 local function createDirectionalNodeTree(self)
@@ -71,13 +86,24 @@ end
 -----------------------------
 
 local function new_node(self, message, sender)
-	if not self.nodesGotten then
-		self.nodesGotten = true
-		timer.delay(.05, false, createNodeTree)
-	end
+	-- create new node
 	local pos = go.get_position(sender)
 	local newNode = navNode.New(sender, pos)
-	table.insert(self.nodes, newNode)
+	
+	if not self.pathBuilt then
+		-- if path not yet built, add to list to build all at once
+		if not self.nodesGotten then
+			self.nodesGotten = true
+			timer.delay(.05, false, createNodeTree)
+		end
+		table.insert(self.nodes, newNode)
+
+	else
+		-- path built, add into the path without recalculating the entire thing
+		addLateNodeToTable(self, newNode, pos)
+	end
+
+	-- apply set up nodes
 	if self.debug then
 		msg.post(sender, hash("debug"))
 	elseif self.deleteAfterGotten then
@@ -133,6 +159,9 @@ function init(self)
 	self.nodePathsFound = false
 	self.init_sender = nil
 
+	--Path built
+	self.pathBuilt = false
+
 	--Directional Nodes
 	self.directionalNodesGotten = false
 	self.directionalNodes = {}
@@ -145,6 +174,10 @@ function init(self)
 	self.debug = false
 	self.deleteAfterGotten = false
 	self.active = false
+
+	--ray cast settings
+	self.numberOfRays = 1
+	self.rayRadius = 32
 end
 
 function update(self, dt)
@@ -155,7 +188,20 @@ function update(self, dt)
 			local from = self.nodes[i]:getPosition()
 			for k, v in pairs(innerList) do
 				local to = k:getPosition()
-				msg.post("@render:", "draw_line", { start_point = from, end_point = to, color = vmath.vector4(1,0,0,1) })
+				if self.numberOfRays <= 1 then
+					-- show only 1
+					msg.post("@render:", "draw_line", { start_point = from, end_point = to, color = vmath.vector4(1,0,0,1) })
+				elseif self.numberOfRays == 2 then
+					-- show 2
+					local points = navgo_multiRayCast.generatePointsToCheck(from, to, self.rayRadius)
+					navgo_multiRayCast.update_drawLineToPoints(points)
+				else
+					-- assume 3
+					local points = navgo_multiRayCast.generatePointsToCheck(from, to, self.rayRadius)
+					local point = { from=from, to=to }
+					table.insert(points, point)
+					navgo_multiRayCast.update_drawLineToPoints(points)
+				end
 			end
 		end
 		for key, value in pairs(self.directionalNodes) do
@@ -296,6 +342,25 @@ function on_message(self, message_id, message, sender)
 		else
 			self.valueRange = 500
 		end
+
+		--------------------------
+		-- Ray Casting Settings --
+		--------------------------
+
+		if message.numberOfRays ~= nil then
+			self.numberOfRays = message.numberOfRays
+			NAVGO.SET_NUMBER_OF_RAYS( message.numberOfRays )
+			self.rayRadius = 32
+			if message.raduis ~= nil then
+				self.rayRadius = message.raduis
+				NAVGO.SET_DISTANCE_BETWEEN_RAYS( message.raduis )
+			end
+			-- redraw existing path if needed
+			if self.pathBuilt then
+				msg.post("#", hash("redraw_path"))
+			end
+		end
+		
 		---------
 		--Debug--
 		---------
@@ -349,6 +414,7 @@ function on_message(self, message_id, message, sender)
 			
 	elseif message_id == hash("redraw_path") then
 		if self.active then
+			self.pathBuilt = false
 			self.nodes = NAVGO.NODE_TREE
 			if self.deleteAfterGotten then
 				for i=1, #self.nodes do

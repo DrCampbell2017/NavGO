@@ -6,11 +6,17 @@
 	Enjoy,
 	- The NavGO Team
 ]]
+require("navGo_pathfinding.multiRayCast")
+	
 A_STAR = {}
 
 local function distance(vec1, vec2)
 	return math.ceil( math.sqrt( math.pow(vec1.x - vec2.x, 2) + math.pow(vec1.y - vec2.y, 2) ) )
 end
+
+------------
+-- A star --
+------------
 
 function A_STAR.findNodeWithID(tree, find)
 	local findPos = go.get_position(find)
@@ -24,7 +30,11 @@ function A_STAR.findNodeWithID(tree, find)
 	error("Point " .. tostring( find ) .. " must be on the path.")
 end
 
-function A_STAR.createTempNode(tree, collisions, fromGO)
+function A_STAR.createTempNode(tree, collisions, fromGO, numberOfRays, radius)
+	-- fill in optional variables
+	if numberOfRays == nil then numberOfRays = 1 end
+	if radius == nil then radius = 32 end
+	-- create the temp node
 	local from = go.get_position(fromGO)
 	local newNode = navNode.New(fromGO, from)
 	for i=1, #tree do
@@ -32,7 +42,8 @@ function A_STAR.createTempNode(tree, collisions, fromGO)
 		local distance = distance(from, to)
 		local result
 		if distance ~= 0 then
-			result = physics.raycast(from, to, collisions, false)
+			result = navgo_multiRayCast.determineIfValidConnection(from, to, collisions, numberOfRays, radius)
+			-- physics.raycast(from, to, collisions, false)
 		end
 		if result == nil then
 			newNode:addToLinkedNodesList(tree[i], distance)
@@ -93,9 +104,13 @@ function A_STAR.convertPathToCordinates(path)
 end
 
 --Returns the list of positions to follow for the path, a bool for if the path is found or not 
-function A_STAR.A_Star(tree, collisions, fromGO, toGO)
+function A_STAR.A_Star(tree, collisions, fromGO, toGO, numberOfRays, radius)
+	-- fill in the blanks
+	if numberOfRays == nil then numberOfRays = 1 end
+	if radius == nil then radius = 32 end
+	-- calculate path
 	local endNode = A_STAR.findNodeWithID(tree, toGO)
-	local startNode, exists = A_STAR.createTempNode(tree, collisions, fromGO)
+	local startNode, exists = A_STAR.createTempNode(tree, collisions, fromGO, numberOfRays, radius)
 	if exists == false then
 		-- no path possible
 		return {}, false
